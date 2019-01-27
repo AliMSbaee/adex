@@ -1,0 +1,129 @@
+/* Add here all your CSS customizations */
+@media only screen and (min-width: 1366px) {
+    .order-page #content-menu {
+        left: auto;
+        right: 0;
+        width: 450px;
+    }
+
+    html.fixed .order-page .inner-body {
+        margin-right: 450px;
+        border-top-width: 113px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .order-page #content-menu {
+        left: auto;
+        right: 0;
+        width: 450px;
+    }
+
+    html.fixed .order-page .inner-body {
+        margin-left: 0;
+        border-top-width: 113px;
+    }
+
+    html.fixed .order-page .inner-menu .nano-content {
+        padding: 0;
+    }
+}
+
+.order-page .categories .nav-link {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.order-page .mg-files {
+    margin-left: -2px;
+    margin-right: -2px;
+}
+
+.order-page .isotope-item {
+    padding: 0 5px;
+}
+
+.order-page .isotope-item .modal-basic {
+    text-decoration: none !important;
+}
+
+.order-page .isotope-item .thumbnail {
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.order-page .isotope-item .thumbnail:hover {
+    background-color: #0088cc;
+    color: #fff;
+}
+
+.order-page .mg-files .thumbnail:hover .thumb-preview img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.order-page .isotope-item .thumbnail:hover .thumb-preview .mg-thumb-options {
+    background-color: rgba(0,0,0,0);
+}
+
+.order-page .isotope-item .thumbnail .mg-description {
+    padding: 0 5px;
+    text-align: center;
+}
+
+.order-page .mg-files .thumbnail .mg-title {
+    display: block;
+    margin: 8px 0;
+}
+
+.order-page #content-menu .receipt .card-body {
+    padding: 0;
+}
+
+.order-page #content-menu .inner-menu-content,
+.order-page #content-menu .inner-menu-content .tabs,
+.order-page #content-menu .inner-menu-content .tabs .tab-content,
+.order-page #content-menu .inner-menu-content .tabs .tab-content #order,
+.order-page #content-menu .receipt {
+    height: 100%;
+}
+
+.order-page #content-menu .receipt .card-body {
+    max-height: calc(100% - 350px);
+    border-radius: 0;
+}
+.order-page #content-menu .receipt .nano-content:after {
+    height: 0;
+}
+
+
+.order-page #content-menu .receipt-total-price {
+    position: fixed;
+    bottom: 0;
+    right: 1px;
+    width: 450px;
+}
+
+.order-page #customer-info .card-body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.order-page #order .table th,
+.order-page #order .table td  {
+    padding: 0.5rem;
+}
+
+.order-page .td-qty {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.order-page .td-qty .fa {
+    cursor: pointer;
+    padding: 2px;
+    margin: 0 2px;
+}
