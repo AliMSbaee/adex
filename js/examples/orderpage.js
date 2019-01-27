@@ -32,25 +32,24 @@
                 }
             }
         });
-
         if (newMeal) newReceiptRow(qty,title,size,piecePrice);
 
 
         additions.each(function (key) {
             var addTitle = $(additions[key]).text(),
                 addPrice = $(additions[key]).attr('data-addition-price');
-            tableRows.each(function (key2) {
-                if ($(tableRows[key2]).find('.td-title').text() === addTitle) {
+            tableRows.each(function (key) {
+                if ($(tableRows[key]).find('.td-title').text() === addTitle) {
+                    newAddition = false;
                     var newQty =  parseInt($(this).find('.td-qty').text()) + 1;
                     $(this).find('.td-qty span').text(newQty);
                     $(this).find('.td-price').text(newQty*addPrice);
-                    newAddition = false;
                 }
             });
             if (newAddition) {
                 newReceiptRow(qty,addTitle,'-',addPrice*qty);
-                newAddition = true;
             }
+            newAddition = true;
         });
     });
 
