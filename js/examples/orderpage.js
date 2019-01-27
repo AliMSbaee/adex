@@ -41,9 +41,10 @@
             tableRows.each(function (key) {
                 if ($(tableRows[key]).find('.td-title').text() === addTitle) {
                     newAddition = false;
-                    var newQty =  parseInt($(this).find('.td-qty').text()) + 1;
+                    var newQty =  parseInt($(this).find('.td-qty').text()) + qty;
                     $(this).find('.td-qty span').text(newQty);
                     $(this).find('.td-price').text(newQty*addPrice);
+                    return false;
                 }
             });
             if (newAddition) {
