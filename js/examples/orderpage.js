@@ -36,10 +36,8 @@
         if (newMeal) newReceiptRow(qty,title,size,piecePrice);
 
 
-
         additions.each(function (key) {
-
-            var addTitle = $(additions[key]).val(),
+            var addTitle = $(additions[key]).text(),
                 addPrice = $(additions[key]).attr('data-addition-price');
             tableRows.each(function (key2) {
                 if ($(tableRows[key2]).find('.td-title').text() === addTitle) {
@@ -49,8 +47,10 @@
                     newAddition = false;
                 }
             });
-
-            if (newAddition) newReceiptRow(qty,addTitle,'-',addPrice*qty)
+            if (newAddition) {
+                newReceiptRow(qty,addTitle,'-',addPrice*qty);
+                newAddition = true;
+            }
         });
     });
 
