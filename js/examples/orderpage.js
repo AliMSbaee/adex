@@ -48,7 +48,7 @@
                 }
             });
             if (newAddition) {
-                newReceiptRow(qty,addTitle,'-',addPrice*qty);
+                newReceiptRow(qty,addTitle,'-',addPrice);
             }
             newAddition = true;
         });
