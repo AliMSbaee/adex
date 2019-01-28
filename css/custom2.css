@@ -63,6 +63,7 @@
     overflow: hidden;
     margin-bottom: 10px;
     border-radius: 10px;
+    border: none;
 }
 
 .order-page .isotope-item .thumbnail:hover {
@@ -92,7 +93,7 @@
 .order-page .mg-files .thumbnail .mg-title {
     display: block;
     margin: 3px 0 -1px 0;
-    padding: 10px 10px 14px 10px;
+    padding: 20px 10px 20px 10px;
     border-radius: 5px;
 }
 
