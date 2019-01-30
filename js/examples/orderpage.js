@@ -94,12 +94,6 @@
             mainClass: 'my-mfp-zoom-in',
             modal: true,
         }).magnificPopup('open');
-
-        $(document).on('click', '.modal-confirm', function (e) {
-            e.preventDefault();
-            $.magnificPopup.instance.st.el.closest('tr').remove();
-            $.magnificPopup.close();
-        });
     });
 
 
