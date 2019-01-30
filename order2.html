@@ -1027,30 +1027,43 @@
 
 						<div class="inner-menu-content">
 							<div class="tabs">
-								<ul class="nav nav-tabs nav-justified">
-									<li class="nav-item active">
-										<a class="nav-link" href="#order" data-toggle="tab" class="text-center">Order</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#customer" data-toggle="tab" class="text-center">Customer</a>
-									</li>
-								</ul>
+								<!--<ul class="nav nav-tabs nav-justified">-->
+									<!--<li class="nav-item active">-->
+										<!--<a class="nav-link" href="#order" data-toggle="tab" class="text-center">Order</a>-->
+									<!--</li>-->
+									<!--<li class="nav-item">-->
+										<!--<a class="nav-link" href="#customer" data-toggle="tab" class="text-center">Customer</a>-->
+									<!--</li>-->
+								<!--</ul>-->
 								<div class="tab-content">
 
 									<div id="order" class="tab-pane active">
 
-										<section class="card mb-4" id="customer-info">
-											<header class="card-header">
-												<h2 class="card-title name text-primary font-weight-bold">Ali Muhammad El Sbaee</h2>
-												<p class="card-subtitle phone">(+20)1012537756</p>
-											</header>
-											<div class="card-body">
-												<p class="h6 m-0 address">25st Mansourah, Egypt.</p>
+										<section class="card mb-1" id="customerInfo">
+											<div class="card-header">
+												<div class="form-group row">
+													<div class="col-12">
+														<select id="customerSearch" class="form-control populate" data-plugin-options='{ "minimumInputLength": 2 }'>
+															<option></option>
+														</select>
+													</div>
+												</div>
 											</div>
+
+											<div class="card-body">
+												<div class="row">
+													<p class="col-3 text-right font-weight-bold m-0">Phone:</p>
+													<p class="col-9 m-0" id="customerInfoPhone"></p>
+												</div>
+												<div class="row">
+													<p class="col-3 text-right font-weight-bold m-0">Address:</p>
+													<p class="col-9 m-0" id="customerInfoAddress"></p>
+												</div>
+											</div>
+
 										</section>
 
-
-										<section class="card receipt">
+										<section class="card receipt mt-1">
 											<div class="card-body nano">
 												<div class="nano-content">
 													<table class="table table-responsive-md text-center table-striped mb-0" id="receipt">
@@ -1070,11 +1083,69 @@
 															<td class="td-size">Large</td>
 															<td class="td-price">75</td>
 															<td class="actions">
-																<a href="#" class="delete-row text-danger"><i class="far fa-trash-alt"></i></a>
+																<a href="#reportOrder" class="ws-normal report-order"><i class="far fa-flag"></i></a>
+																<a href="#confirmDelete" class="ws-normal delete-row text-danger"><i class="far fa-trash-alt"></i></a>
 															</td>
 														</tr>
 														</tbody>
 													</table>
+
+													<div id="confirmDelete" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+														<section class="card">
+															<header class="card-header">
+																<h2 class="card-title">Confirmation</h2>
+															</header>
+															<div class="card-body">
+																<p>Are you sure?</p>
+															</div>
+															<footer class="card-footer">
+																<div class="row">
+																	<div class="col-md-12 text-right">
+																		<button class="btn btn-danger modal-confirm">Delete</button>
+																		<button class="btn btn-default modal-dismiss">Cancel</button>
+																	</div>
+																</div>
+															</footer>
+														</section>
+													</div>
+
+													<div id="reportOrder" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+														<section class="card">
+															<header class="card-header">
+																<h2 class="card-title">Report an order</h2>
+															</header>
+															<div class="card-body">
+																<form action="">
+																	<div class="form-group row">
+																		<label class="col-sm-4 control-label">Choose report type:</label>
+																		<div class="col-sm-8">
+																			<div class="radio-custom radio-primary">
+																				<input type="radio" id="lost" name="reportType">
+																				<label for="lost">Lost</label>
+																			</div>
+																			<div class="radio-custom radio-primary">
+																				<input type="radio" id="complaint" name="reportType">
+																				<label for="complaint">Complaint</label>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="form-group row">
+																		<div class="col-sm-12">
+																			<textarea class="form-control" rows="3" id="" data-plugin-textarea-autosize></textarea>
+																		</div>
+																	</div>
+																</form>
+															</div>
+															<footer class="card-footer">
+																<div class="row">
+																	<div class="col-md-12 text-right">
+																		<button class="btn btn-primary modal-confirm">Report</button>
+																		<button class="btn btn-default modal-dismiss">Cancel</button>
+																	</div>
+																</div>
+															</footer>
+														</section>
+													</div>
 
 												</div>
 											</div>
@@ -1149,164 +1220,72 @@
 
 
 
-									<div id="customer" class="tab-pane">
+									<!--<div id="customer" class="tab-pane">-->
 
-										<div class="form-group row">
-											<div class="col-lg-12">
-												<div class="input-group">
-													<input type="text" class="form-control" placeholder="Right icon">
-													<span class="input-group-append">
-															<span class="input-group-text">
-																<i class="fa fa-search"></i>
-															</span>
-														</span>
-												</div>
-											</div>
-										</div>
+										<!--<div class="form-group row">-->
+											<!--<div class="col-lg-12">-->
+												<!--<div class="input-group">-->
+													<!--<input type="text" class="form-control" placeholder="Right icon">-->
+													<!--<span class="input-group-append">-->
+															<!--<span class="input-group-text">-->
+																<!--<i class="fa fa-search"></i>-->
+															<!--</span>-->
+														<!--</span>-->
+												<!--</div>-->
+											<!--</div>-->
+										<!--</div>-->
 
-										<div class="nano search-results-list">
-											<div class="nano-content ">
-												<ul class="list-unstyled">
+										<!--<div class="nano search-results-list">-->
+											<!--<div class="nano-content ">-->
+												<!--<ul class="list-unstyled">-->
 
-													<li>
-														<p class="result-type">
-															<span class="badge badge-primary">New</span>
-														</p>
-														<a class="customer-search-result" href="#">
-															<div class="result-data">
-																<p class="h5 m-0 title text-primary">Ali Muhammad El Sbaee</p>
-																<p class="h6 m-0 phone">(+20)1012537756</p>
-																<p class="description address">25st Mansourah Addakahlia, Egypt</p>
-															</div>
-														</a>
-													</li>
+													<!--<li class="customer-search-result">-->
+														<!--<p class="result-type">-->
+															<!--<span class="badge badge-primary">New</span>-->
+														<!--</p>-->
+														<!--<div class="result-data">-->
+															<!--<p class="h5 m-0 title text-primary">Ali Muhammad El Sbaee</p>-->
+															<!--<p class="h6 m-0 phone">(+20)1012537756</p>-->
 
-													<li>
-														<p class="result-type">
-															<span class="badge badge-primary">New</span>
-														</p>
-														<a class="customer-search-result" href="#">
-															<div class="result-data">
-																<p class="h5 m-0 title text-primary">Ali Muhammad El Sbaee</p>
-																<p class="h6 m-0 phone">(+20)1012537756</p>
-																<p class="description address">25st Mansourah Addakahlia, Egypt</p>
-															</div>
-														</a>
-													</li>
 
-													<li>
-														<p class="result-type">
-															<span class="badge badge-primary">New</span>
-														</p>
-														<a class="customer-search-result" href="#">
-															<div class="result-data">
-																<p class="h5 m-0 title text-primary">Ali Muhammad El Sbaee</p>
-																<p class="h6 m-0 phone">(+20)1012537756</p>
-																<p class="description address">25st Mansourah Addakahlia, Egypt</p>
-															</div>
-														</a>
-													</li>
+															<!--<p class="description address">25st Mansourah Addakahlia, Egypt</p>-->
+														<!--</div>-->
+													<!--</li>-->
 
-													<li>
-														<p class="result-type">
-															<span class="badge badge-primary">New</span>
-														</p>
-														<a class="customer-search-result" href="#">
-															<div class="result-data">
-																<p class="h5 m-0 title text-primary">Ali Muhammad El Sbaee</p>
-																<p class="h6 m-0 phone">(+20)1012537756</p>
-																<p class="description address">25st Mansourah Addakahlia, Egypt</p>
-															</div>
-														</a>
-													</li>
-
-													<li>
-														<p class="result-type">
-															<span class="badge badge-primary">New</span>
-														</p>
-														<a class="customer-search-result" href="#">
-															<div class="result-data">
-																<p class="h5 m-0 title text-primary">Ali Muhammad El Sbaee</p>
-																<p class="h6 m-0 phone">(+20)1012537756</p>
-																<p class="description address">25st Mansourah Addakahlia, Egypt</p>
-															</div>
-														</a>
-													</li>
-
-													<li>
-														<p class="result-type">
-															<span class="badge badge-primary">New</span>
-														</p>
-														<a class="customer-search-result" href="#">
-															<div class="result-data">
-																<p class="h5 m-0 title text-primary">Ali Muhammad El Sbaee</p>
-																<p class="h6 m-0 phone">(+20)1012537756</p>
-																<p class="description address">25st Mansourah Addakahlia, Egypt</p>
-															</div>
-														</a>
-													</li>
-
-													<li>
-														<p class="result-type">
-															<span class="badge badge-primary">New</span>
-														</p>
-														<a class="customer-search-result" href="#">
-															<div class="result-data">
-																<p class="h5 m-0 title text-primary">Omar Negm</p>
-																<p class="h6 m-0 phone">(+20)1012537756</p>
-																<p class="description address">Cairo, Egypt</p>
-															</div>
-														</a>
-													</li>
-
-													<li>
-														<p class="result-type">
-															<span class="badge badge-primary">New</span>
-														</p>
-														<a class="customer-search-result" href="#">
-															<div class="result-data">
-																<p class="h5 m-0 title text-primary">Ali Muhammad El Sbaee</p>
-																<p class="h6 m-0 phone">(+20)1012537756</p>
-																<p class="description address">25st Mansourah Addakahlia, Egypt</p>
-															</div>
-														</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
+												<!--</ul>-->
+											<!--</div>-->
+										<!--</div>-->
+									<!--</div>-->
 								</div>
 							</div>
 						</div>
 
 					</menu>
-					<div class="inner-body mg-main">
+					<div class="inner-body mg-main" data-sort-source data-sort-id="media-gallery">
 						<ul class="nav nav-pills nav-pills-primary categories row">
-							<li class="right" data-sort-source data-sort-id="media-gallery">
+
+							<li class="nav-item col">
+								<a class="nav-link mb-3 mt-1 btn" data-option-value="*" href="#*">All</a>
 							</li>
 
 							<li class="nav-item col">
-								<a class="nav-link mb-3 mt-1 btn btn-primary" data-option-value="*" href="#*">All</a>
+								<a class="nav-link mb-3 mt-1 btn" data-option-value=".chicken" href="#chicken">Chicken</a>
 							</li>
 
 							<li class="nav-item col">
-								<a class="nav-link mb-3 mt-1 btn btn-primary" data-option-value=".chicken" href="#chicken">Chicken</a>
+								<a class="nav-link mb-3 mt-1 btn" data-option-value=".beef" href="#beef">Beef</a>
 							</li>
 
 							<li class="nav-item col">
-								<a class="nav-link mb-3 mt-1 btn btn-primary" data-option-value=".beef" href="#beef">Beef</a>
+								<a class="nav-link mb-3 mt-1 btn" data-option-value=".seafood" href="#seafood">Sea Food</a>
 							</li>
 
 							<li class="nav-item col">
-								<a class="nav-link mb-3 mt-1 btn btn-primary" data-option-value=".seafood" href="#seafood">Sea Food</a>
+								<a class="nav-link mb-3 mt-1 btn" data-option-value=".beef" href="#beef">Beef</a>
 							</li>
 
 							<li class="nav-item col">
-								<a class="nav-link mb-3 mt-1 btn btn-primary" data-option-value=".beef" href="#beef">Salad</a>
-							</li>
-
-							<li class="nav-item col">
-								<a class="nav-link mb-3 mt-1 btn btn-primary" data-option-value=".seafood" href="#seafood">Sandwiches</a>
+								<a class="nav-link mb-3 mt-1 btn" data-option-value=".seafood" href="#seafood">Sea Food</a>
 							</li>
 
 						</ul>
