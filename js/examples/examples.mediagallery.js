@@ -112,19 +112,19 @@
 
 				});
 
-				$(window).bind("hashchange", function(e) {
-
-					var hashFilter = "." + location.hash.replace("#",""),
-						hash = (hashFilter == "." || hashFilter == ".*" ? "*" : hashFilter);
-
-					source.find(".active").removeClass("active");
-					source.find("[data-option-value='" + hash + "']").closest("li").addClass("active");
-
-					destination.isotope({
-						filter: hash
-					});
-
-				});
+				// $(window).bind("hashchange", function(e) {
+                //
+				// 	var hashFilter = "." + location.hash.replace("#",""),
+				// 		hash = (hashFilter == "." || hashFilter == ".*" ? "*" : hashFilter);
+                //
+				// 	source.find(".active").removeClass("active");
+				// 	source.find("[data-option-value='" + hash + "']").closest("li").addClass("active");
+                //
+				// 	destination.isotope({
+				// 		filter: hash
+				// 	});
+                //
+				// });
 
 				var hashFilter = "." + (location.hash.replace("#","") || "*");
 				var initFilterEl = source.find("a[data-option-value='" + hashFilter + "']");
