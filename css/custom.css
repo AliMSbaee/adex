@@ -1,4 +1,6 @@
 /* Add here all your CSS customizations */
+
+/* Order */
 @media only screen and (min-width: 1366px) {
     .order-page #content-menu {
         left: auto;
@@ -21,12 +23,21 @@
 
     html.fixed .order-page .inner-body {
         margin-left: 0;
-        border-top-width: 113px;
     }
 
     html.fixed .order-page .inner-menu .nano-content {
         padding: 0;
     }
+}
+
+.order-page .categories {
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.order-page .categories .nav-item {
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 .order-page .categories .nav-link {
@@ -35,9 +46,17 @@
     font-weight: bold;
 }
 
+.order-page .nav-pills-primary > li > a {
+    background-color: #6c757d;
+}
+
+.nav-pills-primary > li.active > a {
+    background-color: #0088cc;
+}
+
 .order-page .mg-files {
-    margin-left: -2px;
-    margin-right: -2px;
+    margin-left: -5px;
+    margin-right: -5px;
 }
 
 .order-page .isotope-item {
@@ -52,11 +71,11 @@
     padding: 0;
     overflow: hidden;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: none;
 }
 
 .order-page .isotope-item .thumbnail:hover {
-    background-color: #0088cc;
     color: #fff;
 }
 
@@ -69,14 +88,22 @@
     background-color: rgba(0,0,0,0);
 }
 
+.order-page .isotope-item .thumbnail:hover .mg-description {
+    background-color: rgba(0,0,0,0);
+}
+
 .order-page .isotope-item .thumbnail .mg-description {
-    padding: 0 5px;
     text-align: center;
+    background-color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .order-page .mg-files .thumbnail .mg-title {
     display: block;
-    margin: 8px 0;
+    margin: 3px 0 -1px 0;
+    padding: 20px 10px 20px 10px;
+    border-radius: 5px;
 }
 
 .order-page #content-menu .receipt .card-body {
@@ -87,6 +114,7 @@
 .order-page #content-menu .inner-menu-content .tabs,
 .order-page #content-menu .inner-menu-content .tabs .tab-content,
 .order-page #content-menu .inner-menu-content .tabs .tab-content #order,
+.order-page #content-menu .inner-menu-content .tabs .tab-content #customer,
 .order-page #content-menu .receipt {
     height: 100%;
 }
@@ -95,7 +123,8 @@
     max-height: calc(100% - 350px);
     border-radius: 0;
 }
-.order-page #content-menu .receipt .nano-content:after {
+.order-page #content-menu .receipt .nano-content:after,
+.order-page #content-menu .search-results-list .nano-content:after {
     height: 0;
 }
 
@@ -107,9 +136,13 @@
     width: 450px;
 }
 
-.order-page #customer-info .card-body {
-    padding-top: 10px;
-    padding-bottom: 10px;
+/*.order-page #customer-info .card-body {*/
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
+/*}*/
+
+.order-page #customerInfo .card-header {
+    padding: 0;
 }
 
 .order-page #order .table th,
@@ -126,4 +159,65 @@
     cursor: pointer;
     padding: 2px;
     margin: 0 2px;
+}
+
+.order-page #content-menu .search-results-list li {
+    margin-right: 10px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.order-page #content-menu .search-results-list {
+    max-height: calc(100% - 100px);
+}
+
+.order-page #content-menu .search-results-list .customer-search-result {
+    padding: 10px;
+}
+
+.order-page .inner-menu .title {
+    text-transform: none;
+}
+
+.order-page #content-menu .inner-menu-toggle-inside {
+    margin: 0;
+}
+
+.select2-container--bootstrap .select2-results__option {
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.select2-container--bootstrap .select2-results__option .select2-results__option {
+    border: 0;
+}
+
+.select2-container--bootstrap .select2-results__option p {
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
+    background-color: #0088cc;
+}
+
+.select2-container--bootstrap .select2-results__option--highlighted[aria-selected] p {
+    color: #fff !important;
+}
+
+.select2-container--bootstrap .select2-results>.select2-results__options {
+    max-height: 350px;
+}
+
+
+/* Order-list */
+.order-list .multiselect-container > li > a > label input[type='radio'] {
+    display: none;
+}
+
+.order-list #datatable-details td {
+    vertical-align: middle;
+}
+
+.order-list #datatable-details td .badge {
+    color: #fff;
 }

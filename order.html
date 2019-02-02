@@ -1027,34 +1027,43 @@
 
 						<div class="inner-menu-content">
 							<div class="tabs">
-								<ul class="nav nav-tabs nav-justified">
-									<li class="nav-item active">
-										<a class="nav-link" href="#order" data-toggle="tab" class="text-center">Order</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#customer" data-toggle="tab" class="text-center">Customer</a>
-									</li>
-								</ul>
+								<!--<ul class="nav nav-tabs nav-justified">-->
+									<!--<li class="nav-item active">-->
+										<!--<a class="nav-link" href="#order" data-toggle="tab" class="text-center">Order</a>-->
+									<!--</li>-->
+									<!--<li class="nav-item">-->
+										<!--<a class="nav-link" href="#customer" data-toggle="tab" class="text-center">Customer</a>-->
+									<!--</li>-->
+								<!--</ul>-->
 								<div class="tab-content">
 
 									<div id="order" class="tab-pane active">
 
-										<section class="card mb-4" id="customer-info">
-											<header class="card-header">
-												<div class="card-actions">
-													<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+										<section class="card mb-1" id="customerInfo">
+											<div class="card-header">
+												<div class="form-group row">
+													<div class="col-12">
+														<select id="customerSearch" class="form-control populate" data-plugin-options='{ "minimumInputLength": 2 }'>
+															<option></option>
+														</select>
+													</div>
 												</div>
-
-												<h2 class="card-title name">Ali Muhammad El Sbaee</h2>
-												<p class="card-subtitle phone">(+20)1012537756</p>
-											</header>
-											<div class="card-body">
-												<p class="h6 m-0 address">25st Mansourah, Egypt.</p>
 											</div>
+
+											<div class="card-body">
+												<div class="row">
+													<p class="col-3 text-right font-weight-bold m-0">Phone:</p>
+													<p class="col-9 m-0" id="customerInfoPhone"></p>
+												</div>
+												<div class="row">
+													<p class="col-3 text-right font-weight-bold m-0">Address:</p>
+													<p class="col-9 m-0" id="customerInfoAddress"></p>
+												</div>
+											</div>
+
 										</section>
 
-
-										<section class="card receipt">
+										<section class="card receipt mt-1">
 											<div class="card-body nano">
 												<div class="nano-content">
 													<table class="table table-responsive-md text-center table-striped mb-0" id="receipt">
@@ -1074,11 +1083,69 @@
 															<td class="td-size">Large</td>
 															<td class="td-price">75</td>
 															<td class="actions">
-																<a href="#" class="delete-row text-danger"><i class="far fa-trash-alt"></i></a>
+																<a href="#reportOrder" class="ws-normal report-order"><i class="far fa-flag"></i></a>
+																<a href="#confirmDelete" class="ws-normal delete-row text-danger"><i class="far fa-trash-alt"></i></a>
 															</td>
 														</tr>
 														</tbody>
 													</table>
+
+													<div id="confirmDelete" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+														<section class="card">
+															<header class="card-header">
+																<h2 class="card-title">Confirmation</h2>
+															</header>
+															<div class="card-body">
+																<p>Are you sure?</p>
+															</div>
+															<footer class="card-footer">
+																<div class="row">
+																	<div class="col-md-12 text-right">
+																		<button class="btn btn-danger modal-confirm">Delete</button>
+																		<button class="btn btn-default modal-dismiss">Cancel</button>
+																	</div>
+																</div>
+															</footer>
+														</section>
+													</div>
+
+													<div id="reportOrder" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+														<section class="card">
+															<header class="card-header">
+																<h2 class="card-title">Report an order</h2>
+															</header>
+															<div class="card-body">
+																<form action="">
+																	<div class="form-group row">
+																		<label class="col-sm-4 control-label">Choose report type:</label>
+																		<div class="col-sm-8">
+																			<div class="radio-custom radio-primary">
+																				<input type="radio" id="lost" name="reportType">
+																				<label for="lost">Lost</label>
+																			</div>
+																			<div class="radio-custom radio-primary">
+																				<input type="radio" id="complaint" name="reportType">
+																				<label for="complaint">Complaint</label>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="form-group row">
+																		<div class="col-sm-12">
+																			<textarea class="form-control" rows="3" id="" data-plugin-textarea-autosize></textarea>
+																		</div>
+																	</div>
+																</form>
+															</div>
+															<footer class="card-footer">
+																<div class="row">
+																	<div class="col-md-12 text-right">
+																		<button class="btn btn-primary modal-confirm">Report</button>
+																		<button class="btn btn-default modal-dismiss">Cancel</button>
+																	</div>
+																</div>
+															</footer>
+														</section>
+													</div>
 
 												</div>
 											</div>
@@ -1153,109 +1220,84 @@
 
 
 
-									<div id="customer" class="tab-pane">
+									<!--<div id="customer" class="tab-pane">-->
 
-										<div class="form-group row">
-											<div class="col-lg-12">
-												<div class="input-group">
-													<input type="text" class="form-control" placeholder="Right icon">
-													<span class="input-group-append">
-															<span class="input-group-text">
-																<i class="fa fa-search"></i>
-															</span>
-														</span>
-												</div>
-											</div>
-										</div>
+										<!--<div class="form-group row">-->
+											<!--<div class="col-lg-12">-->
+												<!--<div class="input-group">-->
+													<!--<input type="text" class="form-control" placeholder="Right icon">-->
+													<!--<span class="input-group-append">-->
+															<!--<span class="input-group-text">-->
+																<!--<i class="fa fa-search"></i>-->
+															<!--</span>-->
+														<!--</span>-->
+												<!--</div>-->
+											<!--</div>-->
+										<!--</div>-->
 
-										<ul class="list-unstyled search-results-list">
-											<li>
-												<p class="result-type">
-													<span class="badge badge-primary">New</span>
-												</p>
-												<a class="customer-search-result" href="#">
-													<div class="result-data">
-														<p class="h5 m-0 title text-primary">Ali Muhammad El Sbaee</p>
-														<p class="h6 m-0 phone">(+20)1012537756</p>
-														<p class="description address">25st Mansourah Addakahlia, Egypt</p>
-													</div>
-												</a>
-											</li>
+										<!--<div class="nano search-results-list">-->
+											<!--<div class="nano-content ">-->
+												<!--<ul class="list-unstyled">-->
 
-											<li>
-												<p class="result-type">
-													<span class="badge badge-primary">New</span>
-												</p>
-												<a class="customer-search-result" href="#">
-													<div class="result-data">
-														<p class="h5 m-0 title text-primary">Omar Negm</p>
-														<p class="h6 m-0 phone">(+20)1012537756</p>
-														<p class="description address">Cairo, Egypt</p>
-													</div>
-												</a>
-											</li>
+													<!--<li class="customer-search-result">-->
+														<!--<p class="result-type">-->
+															<!--<span class="badge badge-primary">New</span>-->
+														<!--</p>-->
+														<!--<div class="result-data">-->
+															<!--<p class="h5 m-0 title text-primary">Ali Muhammad El Sbaee</p>-->
+															<!--<p class="h6 m-0 phone">(+20)1012537756</p>-->
 
-											<li>
-												<p class="result-type">
-													<span class="badge badge-primary">New</span>
-												</p>
-												<a class="customer-search-result" href="#">
-													<div class="result-data">
-														<p class="h5 m-0 title text-primary">Ali Muhammad El Sbaee</p>
-														<p class="h6 m-0 phone">(+20)1012537756</p>
-														<p class="description address">25st Mansourah Addakahlia, Egypt</p>
-													</div>
-												</a>
-											</li>
-										</ul>
-									</div>
+
+															<!--<p class="description address">25st Mansourah Addakahlia, Egypt</p>-->
+														<!--</div>-->
+													<!--</li>-->
+
+												<!--</ul>-->
+											<!--</div>-->
+										<!--</div>-->
+									<!--</div>-->
 								</div>
 							</div>
 						</div>
 
 					</menu>
-					<div class="inner-body mg-main">
-						<ul class="nav nav-pills nav-pills-primary categories">
-							<li class="right" data-sort-source data-sort-id="media-gallery">
+					<div class="inner-body mg-main" data-sort-source data-sort-id="media-gallery">
+						<ul class="nav nav-pills nav-pills-primary categories row">
 
+							<li class="nav-item col active">
+								<a class="nav-link mb-3 mt-1 btn" data-option-value="*" href="#*">All</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link mb-3 mt-1 mr-1 btn btn-primary" data-option-value="*" href="#*">All</a>
+
+							<li class="nav-item col">
+								<a class="nav-link mb-3 mt-1 btn" data-option-value=".chicken" href="#chicken">Chicken</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link mb-3 mt-1 mr-1 btn btn-primary" data-option-value=".chicken" href="#chicken">Chicken</a>
+
+							<li class="nav-item col">
+								<a class="nav-link mb-3 mt-1 btn" data-option-value=".beef" href="#beef">Beef</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link mb-3 mt-1 mr-1 btn btn-primary" data-option-value=".beef" href="#beef">Beef</a>
+
+							<li class="nav-item col">
+								<a class="nav-link mb-3 mt-1 btn" data-option-value=".seafood" href="#seafood">Sea Food</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link mb-3 mt-1 mr-1 btn btn-primary" data-option-value=".seafood" href="#seafood">Sea Food</a>
+
+							<li class="nav-item col">
+								<a class="nav-link mb-3 mt-1 btn" data-option-value=".beef" href="#beef">Beef</a>
+							</li>
+
+							<li class="nav-item col">
+								<a class="nav-link mb-3 mt-1 btn" data-option-value=".seafood" href="#seafood">Sea Food</a>
 							</li>
 						</ul>
 
-
-
 						<div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
-
-
-
-
 							<div class="isotope-item chicken col-sm-4 col-md-3 col-lg-2">
 								<a class="modal-basic" href="#chicken1">
-									<div class="thumbnail product">
-										<div class="thumb-preview">
-											<span class="thumb-image">
-												<img src="img/projects/project-1.jpg" class="img-fluid" alt="Project">
-											</span>
-											<div class="mg-thumb-options">
-											</div>
-										</div>
+									<div class="thumbnail product" style="background-color: #0088cc;">
 										<div class="mg-description">
 											<h5 class="mg-title font-weight-bold">Chicken Nuggets<small></small></h5>
 										</div>
 									</div>
 								</a>
-
 								<div id="chicken1" class="modal-block mfp-hide">
 									<section class="card">
 										<header class="card-header">
@@ -1324,14 +1366,7 @@
 							</div>
 							<div class="isotope-item beef col-sm-4 col-md-3 col-lg-2">
 								<a class="modal-basic" href="#beef1">
-									<div class="thumbnail product">
-										<div class="thumb-preview">
-											<span class="thumb-image">
-												<img src="img/projects/project-1.jpg" class="img-fluid" alt="Project">
-											</span>
-											<div class="mg-thumb-options">
-											</div>
-										</div>
+									<div class="thumbnail product" style="background-color: #ba28cc;">
 										<div class="mg-description">
 											<h5 class="mg-title font-weight-bold">Chicken Nuggets<small></small></h5>
 										</div>
@@ -1406,14 +1441,7 @@
 							</div>
 							<div class="isotope-item seafood col-sm-4 col-md-3 col-lg-2">
 								<a class="modal-basic" href="#seafood1">
-									<div class="thumbnail product">
-										<div class="thumb-preview">
-											<span class="thumb-image">
-												<img src="img/projects/project-1.jpg" class="img-fluid" alt="Project">
-											</span>
-											<div class="mg-thumb-options">
-											</div>
-										</div>
+									<div class="thumbnail product" style="background-color: #6dcc2a;">
 										<div class="mg-description">
 											<h5 class="mg-title font-weight-bold">Chicken Nuggets<small></small></h5>
 										</div>
@@ -1488,14 +1516,8 @@
 							</div>
 							<div class="isotope-item chicken col-sm-4 col-md-3 col-lg-2">
 								<a class="modal-basic" href="#chicken2">
-									<div class="thumbnail product">
-										<div class="thumb-preview">
-											<span class="thumb-image">
-												<img src="img/projects/project-1.jpg" class="img-fluid" alt="Project">
-											</span>
-											<div class="mg-thumb-options">
-											</div>
-										</div>
+									<div class="thumbnail product" style="background-color: #cc3121;">
+
 										<div class="mg-description">
 											<h5 class="mg-title font-weight-bold">Chicken Nuggets<small></small></h5>
 										</div>
@@ -1570,14 +1592,7 @@
 							</div>
 							<div class="isotope-item beef col-sm-4 col-md-3 col-lg-2">
 								<a class="modal-basic" href="#beef2">
-									<div class="thumbnail product">
-										<div class="thumb-preview">
-											<span class="thumb-image">
-												<img src="img/projects/project-1.jpg" class="img-fluid" alt="Project">
-											</span>
-											<div class="mg-thumb-options">
-											</div>
-										</div>
+									<div class="thumbnail product" style="background-color: #11cbcc;">
 										<div class="mg-description">
 											<h5 class="mg-title font-weight-bold">Chicken Nuggets<small></small></h5>
 										</div>
@@ -1652,14 +1667,8 @@
 							</div>
 							<div class="isotope-item seafood col-sm-4 col-md-3 col-lg-2">
 								<a class="modal-basic" href="#seafood2">
-									<div class="thumbnail product">
-										<div class="thumb-preview">
-											<span class="thumb-image">
-												<img src="img/projects/project-1.jpg" class="img-fluid" alt="Project">
-											</span>
-											<div class="mg-thumb-options">
-											</div>
-										</div>
+									<div class="thumbnail product" style="background-color: #cc8715;">
+
 										<div class="mg-description">
 											<h5 class="mg-title font-weight-bold">Chicken Nuggets<small></small></h5>
 										</div>
@@ -1734,14 +1743,7 @@
 							</div>
 							<div class="isotope-item chicken col-sm-4 col-md-3 col-lg-2">
 								<a class="modal-basic" href="#chicken3">
-									<div class="thumbnail product">
-										<div class="thumb-preview">
-											<span class="thumb-image">
-												<img src="img/projects/project-1.jpg" class="img-fluid" alt="Project">
-											</span>
-											<div class="mg-thumb-options">
-											</div>
-										</div>
+									<div class="thumbnail product" style="background-color: #0088cc;">
 										<div class="mg-description">
 											<h5 class="mg-title font-weight-bold">Chicken Nuggets<small></small></h5>
 										</div>
@@ -1816,14 +1818,7 @@
 							</div>
 							<div class="isotope-item beef col-sm-4 col-md-3 col-lg-2">
 								<a class="modal-basic" href="#beef3">
-									<div class="thumbnail product">
-										<div class="thumb-preview">
-											<span class="thumb-image">
-												<img src="img/projects/project-1.jpg" class="img-fluid" alt="Project">
-											</span>
-											<div class="mg-thumb-options">
-											</div>
-										</div>
+									<div class="thumbnail product" style="background-color: #ad5bcc;">
 										<div class="mg-description">
 											<h5 class="mg-title font-weight-bold">Chicken Nuggets<small></small></h5>
 										</div>
@@ -1898,14 +1893,8 @@
 							</div>
 							<div class="isotope-item seafood col-sm-4 col-md-3 col-lg-2">
 								<a class="modal-basic" href="#seafood3">
-									<div class="thumbnail product">
-										<div class="thumb-preview">
-											<span class="thumb-image">
-												<img src="img/projects/project-1.jpg" class="img-fluid" alt="Project">
-											</span>
-											<div class="mg-thumb-options">
-											</div>
-										</div>
+									<div class="thumbnail product" style="background-color: #48cc12;">
+
 										<div class="mg-description">
 											<h5 class="mg-title font-weight-bold">Chicken Nuggets<small></small></h5>
 										</div>
@@ -2102,6 +2091,11 @@
 <script src="vendor/ios7-switch/ios7-switch.js"></script>
 <script src="vendor/isotope/isotope.js"></script>
 
+<!-- Examples -->
+<script src="js/examples/examples.mediagallery.js"></script>
+<script src="js/examples/examples.modals.js"></script>
+<script src="js/examples/examples.advanced.form.js"></script>
+
 <!-- Theme Base, Components and Settings -->
 <script src="js/theme.js"></script>
 
@@ -2110,12 +2104,6 @@
 
 <!-- Theme Initialization Files -->
 <script src="js/theme.init.js"></script>
-
-<!-- Examples -->
-<script src="js/examples/examples.mediagallery.js"></script>
-<script src="js/examples/examples.modals.js"></script>
-<script src="js/examples/examples.advanced.form.js"></script>
-
 
 <!-- Order -->
 <script src="js/examples/orderpage.js"></script>
