@@ -12,6 +12,11 @@
         margin-right: 450px;
         border-top-width: 113px;
     }
+
+    html.sidebar-right-opened .order-page #content-menu,
+    html.sidebar-right-opened .order-page #content-menu .receipt-total-price {
+        right: 300px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -181,6 +186,16 @@
 
 .order-page #content-menu .inner-menu-toggle-inside {
     margin: 0;
+}
+
+.order-deliver .toggle > label {
+    background: #f0f0f0;
+    font-weight: bold;
+}
+
+.order-deliver .toggle .toggle {
+    background-color: #fff;
+    border-radius: 5px;
 }
 
 .select2-container--bootstrap .select2-results__option {
