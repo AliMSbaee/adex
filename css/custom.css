@@ -236,3 +236,7 @@
 .order-list #datatable-details td .badge {
     color: #fff;
 }
+
+.order-page .discount {
+    margin-top: 15px;
+}
