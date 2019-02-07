@@ -198,6 +198,18 @@
     border-radius: 5px;
 }
 
+.order-deliver .toggle-content {
+    padding: 15px;
+}
+
+.order-deliver .toggle-content ul {
+    padding: 0;
+}
+
+.order-deliver .toggle-content ul li {
+    list-style: none;
+}
+
 .select2-container--bootstrap .select2-results__option {
     border-bottom: 1px solid #d4d4d4;
 }
