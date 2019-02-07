@@ -69,7 +69,7 @@
             midClick: true,
             removalDelay: 300,
             mainClass: 'my-mfp-zoom-in',
-            modal: true,
+            modal: true
         }).magnificPopup('open');
 
         $(document).on('click', '.modal-confirm', function (e) {
@@ -92,7 +92,7 @@
             midClick: true,
             removalDelay: 300,
             mainClass: 'my-mfp-zoom-in',
-            modal: true,
+            modal: true
         }).magnificPopup('open');
     });
 
@@ -215,9 +215,31 @@
         templateSelection: function(data) {
             return data.text;
         },
+        language: {
+            noResults: function() {
+                return '<a href="#addCustomerModal" class="ws-normal btn btn-success" onclick="addNewCustomer(this)">Add new customer</a>';
+            }
+        },
         theme: "bootstrap"
     }).on('select2:select', function (e) {
         $('#customerInfoPhone').text(e.params.data.phone);
         $('#customerInfoAddress').text(e.params.data.address);
     })
+
+
 }).apply(this, [jQuery]);
+
+function addNewCustomer(anchor) {
+    $(anchor).magnificPopup({
+        type: 'inline',
+        fixedContentPos: false,
+        fixedBgPos: true,
+        overflowY: 'auto',
+        closeBtnInside: true,
+        preloader: false,
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in',
+        modal: true
+    }).magnificPopup('open');
+}
