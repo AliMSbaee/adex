@@ -252,3 +252,19 @@
 .order-page .discount {
     margin-top: 15px;
 }
+
+.order-details .order-info p {
+    margin: 0;
+}
+
+.order-details .timeline .tm-items > li .tm-datetime {
+    top: 70%;
+}
+
+.order-details .timeline .tm-items > li .tm-box {
+    background: #ecedf0;
+}
+
+.order-details .timeline .tm-items > li .tm-box::after {
+    border-right-color: #ecedf0;
+}

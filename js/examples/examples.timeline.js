@@ -25,33 +25,8 @@ Theme Version: 	2.1.1
 		});
 	};
 
-	var initGoogleMaps = function() {
-		var map = new GMaps({
-			div: '#gmap-checkin-example',
-			lat: 40.7533405,
-			lng: -73.982253,
-			markers: [{
-				lat: 40.7533405,
-				lng: -73.982253,
-				infoWindow: {
-					content: '<p>New York Public Library</p>'
-				}
-			}],
-			scrollwheel: false
-		});
-
-		map.addMarker({
-			lat: 40.7533405,
-			lng: -73.982253,
-			infoWindow: {
-				content: '<p>New York Public Library</p>'
-			}
-		});
-	};
-
 	$(function() {
 		initLightbox();
-		initGoogleMaps();
 	});
 
 }).apply(this, [jQuery]);
