@@ -258,7 +258,7 @@
 }
 
 .order-details .timeline .tm-items > li .tm-datetime {
-    top: 70%;
+    top: 54%;
 }
 
 .order-details .timeline .tm-items > li .tm-box {
@@ -267,4 +267,31 @@
 
 .order-details .timeline .tm-items > li .tm-box::after {
     border-right-color: #ecedf0;
+}
+
+.order-details .timeline .tm-items > li .tm-icon {
+    height: 35px;
+    width: 35px;
+    padding: 4px;
+    font-size: 20px;
+    line-height: 20px;
+    left: 150px;
+    top: 65%;
+}
+
+.order-details .timeline .tm-items > li .tm-datetime .tm-datetime-time {
+    font-size: 1rem;
+}
+
+.order-details .text-decoration-line-through {
+    position: relative;
+}
+
+.order-details .text-decoration-line-through::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    border-top: 1px solid #0088cc;
+    margin-top: 24px;
 }
