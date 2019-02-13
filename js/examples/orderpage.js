@@ -224,8 +224,17 @@
     }).on('select2:select', function (e) {
         $('#customerInfoPhone').text(e.params.data.phone);
         $('#customerInfoAddress').text(e.params.data.address);
-    })
+    });
 
+
+    $('#ApplyDiscountCheckbox').on('change', function () {
+        var dropdown = $('#discountsDropdown');
+        if (this.checked) {
+            dropdown.fadeIn(100);
+        } else {
+            dropdown.fadeOut(100);
+        }
+    });
 
 }).apply(this, [jQuery]);
 

@@ -102,5 +102,14 @@
         }
     });
 
+    $("#customerSearch").select2({
+        placeholder: "Select a customer",
+        allowClear: true,
+        ajax: {
+            url: 'https://api.github.com/search/repositories',
+            dataType: 'json'
+        },
+        theme: "bootstrap"
+    })
 
 }).apply(this, [jQuery]);
