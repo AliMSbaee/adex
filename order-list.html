@@ -976,7 +976,7 @@
                     if (typeof localStorage !== 'undefined') {
                         if (localStorage.getItem('sidebar-left-position') !== null) {
                             var initialPosition = localStorage.getItem('sidebar-left-position'),
-                                    sidebarLeft = document.querySelector('#sidebar-left .nano-content');
+                                sidebarLeft = document.querySelector('#sidebar-left .nano-content');
 
                             sidebarLeft.scrollTop = initialPosition;
                         }
@@ -1009,348 +1009,344 @@
             </header>
 
             <!-- start: page -->
-                <div class="order-list">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <section class="card">
-                                <header class="card-header">
-                                    <div class="form-group row">
-                                        <div class="col-lg-2 col-sm-12">
-                                            <label class="control-label pt-2 mr-2">Filter:</label>
-                                            <select class="form-control" data-plugin-multiselect data-plugin-options='{"buttonWidth": "100%"}'>
-                                                <option value="today" selected>Today</option>
-                                                <option value="week">Last week</option>
-                                                <option value="month">Last month</option>
-                                                <option value="custom">Custom</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-12">
-                                            <label class="control-label pt-2 mr-2">Customer:</label>
-                                            <select id="customerSearch" class="form-control populate" data-plugin-options='{ "minimumInputLength": 2 }'>
-                                                <option></option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-7 col-sm-12">
-                                            <div class="row">
-                                                <div class="col-sm-12 col-lg-4">
-                                                    <label class="control-label pt-2 mr-2">Status:</label>
-                                                    <select class="form-control" data-plugin-multiselect data-plugin-options='{"buttonWidth": "100%"}'>
-                                                        <option value="Cancelled">Cancelled</option>
-                                                        <option value="Delivered">Delivered</option>
-                                                        <option value="Lost">Delivered With Lost</option>
-                                                        <option value="complaint">Delivered with complaint</option>
-                                                        <option value="Pending">Pending</option>
-                                                        <option value="kitchen">In-kitchen</option>
-                                                        <option value="New">New</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-sm-12 col-lg-8">
-                                                    <label class="control-label pt-2 mr-2">Duration:</label>
-                                                    <div class="input-daterange input-group" data-plugin-datepicker>
+            <div class="order-list">
+                <section class="card">
+                    <header class="card-header">
+                        <div class="form-group row">
+                            <div class="col-lg-2 col-sm-12">
+                                <label class="control-label pt-2 mr-2">Filter:</label>
+                                <select class="form-control" data-plugin-multiselect data-plugin-options='{"buttonWidth": "100%"}'>
+                                    <option value="today" selected>Today</option>
+                                    <option value="week">Last week</option>
+                                    <option value="month">Last month</option>
+                                    <option value="custom">Custom</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3 col-sm-12">
+                                <label class="control-label pt-2 mr-2">Customer:</label>
+                                <select id="customerSearch" class="form-control populate" data-plugin-options='{"buttonWidth": "100%"}'>
+                                    <option></option>
+                                </select>
+                            </div>
+                            <div class="col-lg-7 col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-4">
+                                        <label class="control-label pt-2 mr-2">Status:</label>
+                                        <select class="form-control" data-plugin-multiselect data-plugin-options='{"buttonWidth": "100%"}'>
+                                            <option value="Cancelled">Cancelled</option>
+                                            <option value="Delivered">Delivered</option>
+                                            <option value="Lost">Delivered With Lost</option>
+                                            <option value="complaint">Delivered with complaint</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="kitchen">In-kitchen</option>
+                                            <option value="New">New</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-12 col-lg-8">
+                                        <label class="control-label pt-2 mr-2">Duration:</label>
+                                        <div class="input-daterange input-group" data-plugin-datepicker>
 														<span class="input-group-prepend">
 															<span class="input-group-text">
 																From
 															</span>
 														</span>
-                                                        <input type="text" class="form-control" name="start">
-                                                        <span class="input-group-text border-left-0 border-right-0 rounded-0">
+                                            <input type="text" class="form-control" name="start">
+                                            <span class="input-group-text border-left-0 border-right-0 rounded-0">
 															to
 														</span>
-                                                        <input type="text" class="form-control" name="end">
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <input type="text" class="form-control" name="end">
                                         </div>
                                     </div>
-                                </header>
-                                <div class="card-body">
-                                    <table class="table table-bordered table-striped table-sm mb-0 table-responsive-md" id="datatable-details">
-                                        <thead>
-                                        <tr>
-                                            <th class="hidden">Cashier</th>
-                                            <th class="hidden">Delivery</th>
-                                            <th class="hidden">Notes</th>
-                                            <th class="hidden">Paid</th>
-                                            <th class="hidden">Short</th>
-                                            <th>Order Id</th>
-                                            <th>Customer</th>
-                                            <th>Date&Time</th>
-                                            <th>Total</th>
-                                            <th>Status</th>
-                                            <th class="text-center">Actions</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td class="hidden">Omar Negm</td>
-                                            <td class="hidden">Ali Muhammad</td>
-                                            <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                            <td class="hidden">1000 <small>EGP</small></td>
-                                            <td class="hidden">-23 <Small>EGP</Small></td>
-                                            <td>120654</td>
-                                            <td>
-                                                <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                                <br>
-                                                <span>(+20) 1012537756</span>
-                                            </td>
-                                            <td>
-                                                <span class="date">13/5/2019</span>
-                                                <br>
-                                                <span class="time">5:30 PM</span>
-                                            </td>
-                                            <td><strong>1023 </strong><small>EGP</small></td>
-                                            <td><span class="badge" style="background: #c92ecb">Pending</span></td>
-                                            <td class="actions text-center">
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="hidden">Omar Negm</td>
-                                            <td class="hidden">Ali Muhammad</td>
-                                            <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                            <td class="hidden">1000 <small>EGP</small></td>
-                                            <td class="hidden">-23 <Small>EGP</Small></td>
-                                            <td>120654</td>
-                                            <td>
-                                                <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                                <br>
-                                                <span>(+20) 1012537756</span>
-                                            </td>
-                                            <td>
-                                                <span class="date">13/5/2019</span>
-                                                <br>
-                                                <span class="time">5:30 PM</span>
-                                            </td>
-                                            <td><strong>1023 </strong><small>EGP</small></td>
-                                            <td><span class="badge" style="background: #41b44e">Delivered</span></td>
-                                            <td class="actions text-center">
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="hidden">Omar Negm</td>
-                                            <td class="hidden">Ali Muhammad</td>
-                                            <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                            <td class="hidden">1000 <small>EGP</small></td>
-                                            <td class="hidden">-23 <Small>EGP</Small></td>
-                                            <td>120654</td>
-                                            <td>
-                                                <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                                <br>
-                                                <span>(+20) 1012537756</span>
-                                            </td>
-                                            <td>
-                                                <span class="date">13/5/2019</span>
-                                                <br>
-                                                <span class="time">5:30 PM</span>
-                                            </td>
-                                            <td><strong>1023 </strong><small>EGP</small></td>
-                                            <td><span class="badge" style="background: #918e90">Canceled</span></td>
-                                            <td class="actions text-center">
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="hidden">Ali Muhammad</td>
-                                            <td class="hidden">Omar Negm</td>
-                                            <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                            <td class="hidden">1000 <small>EGP</small></td>
-                                            <td class="hidden">-23 <Small>EGP</Small></td>
-                                            <td>120654</td>
-                                            <td>
-                                                <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                                <br>
-                                                <span>(+20) 1012537756</span>
-                                            </td>
-                                            <td>
-                                                <span class="date">13/5/2019</span>
-                                                <br>
-                                                <span class="time">5:30 PM</span>
-                                            </td>
-                                            <td><strong>1023 </strong><small>EGP</small></td>
-                                            <td><span class="badge" style="background: #4fa2d0">New</span></td>
-                                            <td class="actions text-center">
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="hidden">Ali Muhammad</td>
-                                            <td class="hidden">Omar Negm</td>
-                                            <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                            <td class="hidden">1000 <small>EGP</small></td>
-                                            <td class="hidden">-23 <Small>EGP</Small></td>
-                                            <td>120654</td>
-                                            <td>
-                                                <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                                <br>
-                                                <span>(+20) 1012537756</span>
-                                            </td>
-                                            <td>
-                                                <span class="date">13/5/2019</span>
-                                                <br>
-                                                <span class="time">5:30 PM</span>
-                                            </td>
-                                            <td><strong>1023 </strong><small>EGP</small></td>
-                                            <td><span class="badge" style="background: #d62114">Delivered with lost</span></td>
-                                            <td class="actions text-center">
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="hidden">Ali Muhammad</td>
-                                            <td class="hidden">Omar Negm</td>
-                                            <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                            <td class="hidden">1000 <small>EGP</small></td>
-                                            <td class="hidden">-23 <Small>EGP</Small></td>
-                                            <td>120654</td>
-                                            <td>
-                                                <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                                <br>
-                                                <span>(+20) 1012537756</span>
-                                            </td>
-                                            <td>
-                                                <span class="date">13/5/2019</span>
-                                                <br>
-                                                <span class="time">5:30 PM</span>
-                                            </td>
-                                            <td><strong>1023 </strong><small>EGP</small></td>
-                                            <td><span class="badge" style="background: #d0760b">In-kitchen</span></td>
-                                            <td class="actions text-center">
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="hidden">Ali Muhammad</td>
-                                            <td class="hidden">Omar Negm</td>
-                                            <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                            <td class="hidden">1000 <small>EGP</small></td>
-                                            <td class="hidden">-23 <Small>EGP</Small></td>
-                                            <td>120654</td>
-                                            <td>
-                                                <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                                <br>
-                                                <span>(+20) 1012537756</span>
-                                            </td>
-                                            <td>
-                                                <span class="date">13/5/2019</span>
-                                                <br>
-                                                <span class="time">5:30 PM</span>
-                                            </td>
-                                            <td><strong>1023 </strong><small>EGP</small></td>
-                                            <td><span class="badge" style="background: #000000">Delivered with complaint</span></td>
-                                            <td class="actions text-center">
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                                <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
-                            </section>
+                            </div>
                         </div>
+                    </header>
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped table-sm mb-0 table-responsive-md" id="datatable-details">
+                            <thead>
+                            <tr>
+                                <th class="hidden">Cashier</th>
+                                <th class="hidden">Delivery</th>
+                                <th class="hidden">Notes</th>
+                                <th class="hidden">Paid</th>
+                                <th class="hidden">Short</th>
+                                <th>Order Id</th>
+                                <th>Customer</th>
+                                <th>Date&Time</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="hidden">Omar Negm</td>
+                                <td class="hidden">Ali Muhammad</td>
+                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
+                                <td class="hidden">1000 <small>EGP</small></td>
+                                <td class="hidden">-23 <Small>EGP</Small></td>
+                                <td>120654</td>
+                                <td>
+                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
+                                    <br>
+                                    <span>(+20) 1012537756</span>
+                                </td>
+                                <td>
+                                    <span class="date">13/5/2019</span>
+                                    <br>
+                                    <span class="time">5:30 PM</span>
+                                </td>
+                                <td><strong>1023 </strong><small>EGP</small></td>
+                                <td><span class="badge" style="background: #c92ecb">Pending</span></td>
+                                <td class="actions text-center">
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="hidden">Omar Negm</td>
+                                <td class="hidden">Ali Muhammad</td>
+                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
+                                <td class="hidden">1000 <small>EGP</small></td>
+                                <td class="hidden">-23 <Small>EGP</Small></td>
+                                <td>120654</td>
+                                <td>
+                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
+                                    <br>
+                                    <span>(+20) 1012537756</span>
+                                </td>
+                                <td>
+                                    <span class="date">13/5/2019</span>
+                                    <br>
+                                    <span class="time">5:30 PM</span>
+                                </td>
+                                <td><strong>1023 </strong><small>EGP</small></td>
+                                <td><span class="badge" style="background: #41b44e">Delivered</span></td>
+                                <td class="actions text-center">
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="hidden">Omar Negm</td>
+                                <td class="hidden">Ali Muhammad</td>
+                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
+                                <td class="hidden">1000 <small>EGP</small></td>
+                                <td class="hidden">-23 <Small>EGP</Small></td>
+                                <td>120654</td>
+                                <td>
+                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
+                                    <br>
+                                    <span>(+20) 1012537756</span>
+                                </td>
+                                <td>
+                                    <span class="date">13/5/2019</span>
+                                    <br>
+                                    <span class="time">5:30 PM</span>
+                                </td>
+                                <td><strong>1023 </strong><small>EGP</small></td>
+                                <td><span class="badge" style="background: #918e90">Canceled</span></td>
+                                <td class="actions text-center">
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="hidden">Ali Muhammad</td>
+                                <td class="hidden">Omar Negm</td>
+                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
+                                <td class="hidden">1000 <small>EGP</small></td>
+                                <td class="hidden">-23 <Small>EGP</Small></td>
+                                <td>120654</td>
+                                <td>
+                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
+                                    <br>
+                                    <span>(+20) 1012537756</span>
+                                </td>
+                                <td>
+                                    <span class="date">13/5/2019</span>
+                                    <br>
+                                    <span class="time">5:30 PM</span>
+                                </td>
+                                <td><strong>1023 </strong><small>EGP</small></td>
+                                <td><span class="badge" style="background: #4fa2d0">New</span></td>
+                                <td class="actions text-center">
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="hidden">Ali Muhammad</td>
+                                <td class="hidden">Omar Negm</td>
+                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
+                                <td class="hidden">1000 <small>EGP</small></td>
+                                <td class="hidden">-23 <Small>EGP</Small></td>
+                                <td>120654</td>
+                                <td>
+                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
+                                    <br>
+                                    <span>(+20) 1012537756</span>
+                                </td>
+                                <td>
+                                    <span class="date">13/5/2019</span>
+                                    <br>
+                                    <span class="time">5:30 PM</span>
+                                </td>
+                                <td><strong>1023 </strong><small>EGP</small></td>
+                                <td><span class="badge" style="background: #d62114">Delivered with lost</span></td>
+                                <td class="actions text-center">
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="hidden">Ali Muhammad</td>
+                                <td class="hidden">Omar Negm</td>
+                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
+                                <td class="hidden">1000 <small>EGP</small></td>
+                                <td class="hidden">-23 <Small>EGP</Small></td>
+                                <td>120654</td>
+                                <td>
+                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
+                                    <br>
+                                    <span>(+20) 1012537756</span>
+                                </td>
+                                <td>
+                                    <span class="date">13/5/2019</span>
+                                    <br>
+                                    <span class="time">5:30 PM</span>
+                                </td>
+                                <td><strong>1023 </strong><small>EGP</small></td>
+                                <td><span class="badge" style="background: #d0760b">In-kitchen</span></td>
+                                <td class="actions text-center">
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="hidden">Ali Muhammad</td>
+                                <td class="hidden">Omar Negm</td>
+                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
+                                <td class="hidden">1000 <small>EGP</small></td>
+                                <td class="hidden">-23 <Small>EGP</Small></td>
+                                <td>120654</td>
+                                <td>
+                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
+                                    <br>
+                                    <span>(+20) 1012537756</span>
+                                </td>
+                                <td>
+                                    <span class="date">13/5/2019</span>
+                                    <br>
+                                    <span class="time">5:30 PM</span>
+                                </td>
+                                <td><strong>1023 </strong><small>EGP</small></td>
+                                <td><span class="badge" style="background: #000000">Delivered with complaint</span></td>
+                                <td class="actions text-center">
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
+                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <div class="row">
+
+                    <div class="col-lg-6 mt-3">
+                        <section class="card">
+                            <header class="card-header">
+                                <h2 class="card-title">Income Statistics</h2>
+                            </header>
+                            <div class="card-body">
+                                <div id="incomeChart" class="ct-chart ct-perfect-fourth ct-golden-section"></div>
+                                <span class="badge text-light" style="background: #0088cc">Total Income</span>
+                                <span class="badge text-light" style="background: #005580">Tax</span>
+                                <span class="badge text-light" style="background: #E36159">Net Income</span>
+                            </div>
+                        </section>
                     </div>
 
-                    <div class="row">
+                    <div class="col-lg-6 mt-3">
+                        <section class="card">
+                            <header class="card-header">
+                                <h2 class="card-title">Pie Chart</h2>
+                            </header>
+                            <!--<div class="card-body">-->
+                            <!--<div id="orderChart" class="ct-chart ct-perfect-fourth ct-golden-section"></div>-->
+                            <!--</div>-->
+                            <div class="card-body">
 
-                        <div class="col-lg-6 mt-3">
-                            <section class="card">
-                                <header class="card-header">
-                                    <h2 class="card-title">Income Statistics</h2>
-                                </header>
-                                <div class="card-body">
-                                    <div id="incomeChart" class="ct-chart ct-perfect-fourth ct-golden-section"></div>
-                                    <span class="badge text-light" style="background: #0088cc">Total Income</span>
-                                    <span class="badge text-light" style="background: #005580">Tax</span>
-                                    <span class="badge text-light" style="background: #E36159">Net Income</span>
-                                </div>
-                            </section>
-                        </div>
+                                <!-- Flot: Pie -->
+                                <div class="chart chart-md" id="flotPie"></div>
+                                <script type="text/javascript">
 
-                        <div class="col-lg-6 mt-3">
-                            <section class="card">
-                                <header class="card-header">
-                                    <h2 class="card-title">Pie Chart</h2>
-                                </header>
-                                <!--<div class="card-body">-->
-                                    <!--<div id="orderChart" class="ct-chart ct-perfect-fourth ct-golden-section"></div>-->
-                                <!--</div>-->
-                                <div class="card-body">
+                                    var flotPieData = [{
+                                        label: "Pending",
+                                        data: [
+                                            [1, 6]
+                                        ],
+                                        color: '#c92ecb'
+                                    }, {
+                                        label: "Delivered",
+                                        data: [
+                                            [1, 15]
+                                        ],
+                                        color: '#41b44e'
+                                    },{
+                                        label: "Delivered with lost",
+                                        data: [
+                                            [1, 12]
+                                        ],
+                                        color: '#d62114'
+                                    }, {
+                                        label: "Canceled",
+                                        data: [
+                                            [1, 5]
+                                        ],
+                                        color: '#918e90'
+                                    }, {
+                                        label: "New",
+                                        data: [
+                                            [1, 7]
+                                        ],
+                                        color: '#4fa2d0'
+                                    }, {
+                                        label: "In-kitchen",
+                                        data: [
+                                            [1, 7]
+                                        ],
+                                        color: '#d0760b'
+                                    }, {
+                                        label: "Delivered with complaint",
+                                        data: [
+                                            [1, 6]
+                                        ],
+                                        color: '#000000'
+                                    }];
+                                </script>
 
-                                    <!-- Flot: Pie -->
-                                    <div class="chart chart-md" id="flotPie"></div>
-                                    <script type="text/javascript">
-
-                                        var flotPieData = [{
-                                            label: "Pending",
-                                            data: [
-                                                [1, 6]
-                                            ],
-                                            color: '#c92ecb'
-                                        }, {
-                                            label: "Delivered",
-                                            data: [
-                                                [1, 15]
-                                            ],
-                                            color: '#41b44e'
-                                        },{
-                                            label: "Delivered with lost",
-                                            data: [
-                                                [1, 12]
-                                            ],
-                                            color: '#d62114'
-                                        }, {
-                                            label: "Canceled",
-                                            data: [
-                                                [1, 5]
-                                            ],
-                                            color: '#918e90'
-                                        }, {
-                                            label: "New",
-                                            data: [
-                                                [1, 7]
-                                            ],
-                                            color: '#4fa2d0'
-                                        }, {
-                                            label: "In-kitchen",
-                                            data: [
-                                                [1, 7]
-                                            ],
-                                            color: '#d0760b'
-                                        }, {
-                                            label: "Delivered with complaint",
-                                            data: [
-                                                [1, 6]
-                                            ],
-                                            color: '#000000'
-                                        }];
-                                    </script>
-
-                                </div>
-                            </section>
-                        </div>
-
+                            </div>
+                        </section>
                     </div>
+
                 </div>
+            </div>
             <!-- end: page -->
         </section>
     </div>

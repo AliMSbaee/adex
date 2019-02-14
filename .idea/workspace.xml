@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab6cc33e-314b-4ac2-81ad-2259e528ac40" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/custom.js" afterPath="$PROJECT_DIR$/js/custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/examples/order-list.js" afterPath="$PROJECT_DIR$/js/examples/order-list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/examples/orderpage.js" afterPath="$PROJECT_DIR$/js/examples/orderpage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/custom.css" afterPath="$PROJECT_DIR$/css/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/order-gallery.html" afterPath="$PROJECT_DIR$/order-gallery.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/order-list.html" afterPath="$PROJECT_DIR$/order-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/order-taker.html" afterPath="$PROJECT_DIR$/order-taker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product-list.html" afterPath="$PROJECT_DIR$/product-list.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/examples/orderpage.js" afterPath="$PROJECT_DIR$/js/examples/order-taker.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,23 +26,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="product-list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="product-list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/product-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="1016" column="68" lean-forward="true" selection-start-line="1016" selection-start-column="68" selection-end-line="1016" selection-end-column="68" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#td#9;n#tr#6;n#tbody#0;n#table#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="389">
+              <caret line="1227" column="0" lean-forward="false" selection-start-line="1227" selection-start-column="0" selection-end-line="1227" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="276" column="22" lean-forward="true" selection-start-line="276" selection-start-column="22" selection-end-line="276" selection-end-column="22" />
+            <state relative-caret-position="1687">
+              <caret line="302" column="16" lean-forward="false" selection-start-line="302" selection-start-column="16" selection-end-line="302" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-list.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/examples/product-list.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -47,15 +58,25 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>can</find>
       <find>20%</find>
-      <find>customer</find>
       <find>customerSearch</find>
       <find>page</find>
       <find>Income Statistics</find>
       <find>header</find>
+      <find>customer</find>
+      <find>modal</find>
+      <find>&lt;a href=&quot;confirmDelete&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Delete&quot;&gt;&lt;i class=&quot;fas fa-trash-alt text-danger&quot;&gt;&lt;/i&gt;&lt;/a&gt;</find>
+      <find>delete-row</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -64,13 +85,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/order-details.html" />
-        <option value="$PROJECT_DIR$/order-list.html" />
-        <option value="$PROJECT_DIR$/js/custom.js" />
         <option value="$PROJECT_DIR$/js/examples/orderpage.js" />
         <option value="$PROJECT_DIR$/js/examples/order-list.js" />
+        <option value="$PROJECT_DIR$/css/custom.css" />
+        <option value="$PROJECT_DIR$/order-list.html" />
         <option value="$PROJECT_DIR$/product-list.html" />
+        <option value="$PROJECT_DIR$/order-taker.html" />
+        <option value="$PROJECT_DIR$/js/custom.js" />
+        <option value="$PROJECT_DIR$/js/examples/product-list.js" />
       </list>
     </option>
   </component>
@@ -102,7 +125,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -149,6 +171,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -169,8 +192,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.product-list.html">
+  <component name="RunManager" selected="JavaScript Debug.order-taker.html">
     <configuration default="false" name="product-list.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/adex/product-list.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="order-taker.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/adex/order-taker.html">
       <method />
     </configuration>
     <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
@@ -212,6 +238,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -234,12 +266,14 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.product-list.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.order-taker.html" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.product-list.html" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.order-taker.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.product-list.html" />
       </list>
     </recent_temporary>
   </component>
@@ -255,11 +289,12 @@
       <updated>1549996768365</updated>
       <workItem from="1549996769923" duration="4757000" />
       <workItem from="1550061620293" duration="7671000" />
+      <workItem from="1550136468186" duration="6484000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12428000" />
+    <option name="totallyTimeSpent" value="18912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -295,6 +330,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/product-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6072">
+          <caret line="276" column="22" lean-forward="true" selection-start-line="276" selection-start-column="22" selection-end-line="276" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/order-details.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3608">
@@ -349,10 +400,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/examples/orderpage.js">
+    <entry file="file://$PROJECT_DIR$/order-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="223" column="6" lean-forward="false" selection-start-line="204" selection-start-column="4" selection-end-line="223" selection-end-column="6" />
+        <state relative-caret-position="517">
+          <caret line="1381" column="58" lean-forward="true" selection-start-line="1381" selection-start-column="58" selection-end-line="1381" selection-end-column="58" />
+          <folding>
+            <element signature="n#section#0;n#div#0;n#section#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/product-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="1227" column="0" lean-forward="false" selection-start-line="1227" selection-start-column="0" selection-end-line="1227" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order-taker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="2183" column="33" lean-forward="false" selection-start-line="2183" selection-start-column="33" selection-end-line="2183" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/examples/order-taker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="234" column="34" lean-forward="true" selection-start-line="234" selection-start-column="34" selection-end-line="234" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -360,44 +437,26 @@
     <entry file="file://$PROJECT_DIR$/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
-          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/order-list.html">
+    <entry file="file://$PROJECT_DIR$/js/examples/product-list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="1484" column="0" lean-forward="true" selection-start-line="1484" selection-start-column="0" selection-end-line="1484" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order-taker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="1044" column="72" lean-forward="true" selection-start-line="1044" selection-start-column="72" selection-end-line="1044" selection-end-column="72" />
+        <state relative-caret-position="22">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="276" column="22" lean-forward="true" selection-start-line="276" selection-start-column="22" selection-end-line="276" selection-end-column="22" />
+        <state relative-caret-position="1687">
+          <caret line="302" column="16" lean-forward="false" selection-start-line="302" selection-start-column="16" selection-end-line="302" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/product-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="1016" column="68" lean-forward="true" selection-start-line="1016" selection-start-column="68" selection-end-line="1016" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#td#9;n#tr#6;n#tbody#0;n#table#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

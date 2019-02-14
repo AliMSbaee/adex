@@ -1012,251 +1012,96 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <section class="card">
-                            <header class="card-header">
-                                <div class="form-group row">
-                                    <div class="col-lg-4 col-sm-12">
-                                        <label class="control-label pt-2 mr-2">Filter:</label>
-                                        <select class="form-control" data-plugin-multiselect data-plugin-options='{ "maxHeight": "200" }'>
-                                            <option value="today" selected>Today</option>
-                                            <option value="week">Last week</option>
-                                            <option value="month">Last month</option>
-                                            <option value="custom">Custom</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-8 col-sm-12">
-                                        <div class="row">
-                                            <div class="col-sm-12 col-lg-4">
-                                                <label class="control-label pt-2 mr-2">Status:</label>
-                                                <select class="form-control" data-plugin-multiselect data-plugin-options=''>
-                                                    <option value="" selected>Cancelled</option>
-                                                    <option value="">Delivered</option>
-                                                    <option value="">Delivered With Lost</option>
-                                                    <option value="">Delivered with complaint</option>
-                                                    <option value="">Pending</option>
-                                                    <option value="">In-kitchen</option>
-                                                    <option value="">New</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-12 col-lg-8">
-                                                <div class="input-daterange input-group" data-plugin-datepicker>
-														<span class="input-group-prepend">
-															<span class="input-group-text">
-																From
-															</span>
-														</span>
-                                                    <input type="text" class="form-control" name="start">
-                                                    <span class="input-group-text border-left-0 border-right-0 rounded-0">
-															to
-														</span>
-                                                    <input type="text" class="form-control" name="end">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </header>
                             <div class="card-body">
-                                <table class="table table-bordered table-striped table-sm mb-0 table-responsive-md" id="datatable-details">
+                                <a href="#" class="btn btn-success mb-3 font-weight-bold"><i class="fas fa-plus mr-2"></i>New Product</a>
+                                <table class="table table-bordered table-striped mb-0 table-responsive-md">
                                     <thead>
                                     <tr>
-                                        <th class="hidden">Cashier</th>
-                                        <th class="hidden">Delivery</th>
-                                        <th class="hidden">Notes</th>
-                                        <th class="hidden">Paid</th>
-                                        <th class="hidden">Short</th>
-                                        <th>Order Id</th>
-                                        <th>Customer</th>
-                                        <th>Date&Time</th>
-                                        <th>Total</th>
-                                        <th>Status</th>
+                                        <th>Id</th>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Description</th>
                                         <th class="text-center">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td class="hidden">Omar Negm</td>
-                                        <td class="hidden">Ali Muhammad</td>
-                                        <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                        <td class="hidden">1000 <small>EGP</small></td>
-                                        <td class="hidden">-23 <Small>EGP</Small></td>
-                                        <td>120654</td>
-                                        <td>
-                                            <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                            <br>
-                                            <span>(+20) 1012537756</span>
-                                        </td>
-                                        <td>
-                                            <span class="date">13/5/2019</span>
-                                            <br>
-                                            <span class="time">5:30 PM</span>
-                                        </td>
-                                        <td><strong>1023 </strong><small>EGP</small></td>
-                                        <td><span class="badge" style="background: #c92ecb">Pending</span></td>
+                                        <td>51</td>
+                                        <td class="font-weight-bold">Chicken Nuggets</td>
+                                        <td>chicken</td>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
                                         <td class="actions text-center">
                                             <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
                                             <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                            <a href="#confirmDelete" class="ws-normal delete-row text-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="hidden">Omar Negm</td>
-                                        <td class="hidden">Ali Muhammad</td>
-                                        <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                        <td class="hidden">1000 <small>EGP</small></td>
-                                        <td class="hidden">-23 <Small>EGP</Small></td>
-                                        <td>120654</td>
-                                        <td>
-                                            <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                            <br>
-                                            <span>(+20) 1012537756</span>
-                                        </td>
-                                        <td>
-                                            <span class="date">13/5/2019</span>
-                                            <br>
-                                            <span class="time">5:30 PM</span>
-                                        </td>
-                                        <td><strong>1023 </strong><small>EGP</small></td>
-                                        <td><span class="badge" style="background: #41b44e">Delivered</span></td>
+                                        <td>51</td>
+                                        <td class="font-weight-bold">Chicken Nuggets</td>
+                                        <td>chicken</td>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
                                         <td class="actions text-center">
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
+                                             <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
                                             <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                            <a href="#confirmDelete" class="ws-normal delete-row text-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="hidden">Omar Negm</td>
-                                        <td class="hidden">Ali Muhammad</td>
-                                        <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                        <td class="hidden">1000 <small>EGP</small></td>
-                                        <td class="hidden">-23 <Small>EGP</Small></td>
-                                        <td>120654</td>
-                                        <td>
-                                            <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                            <br>
-                                            <span>(+20) 1012537756</span>
-                                        </td>
-                                        <td>
-                                            <span class="date">13/5/2019</span>
-                                            <br>
-                                            <span class="time">5:30 PM</span>
-                                        </td>
-                                        <td><strong>1023 </strong><small>EGP</small></td>
-                                        <td><span class="badge" style="background: #918e90">Canceled</span></td>
+                                        <td>51</td>
+                                        <td class="font-weight-bold">Chicken Nuggets</td>
+                                        <td>chicken</td>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
                                         <td class="actions text-center">
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
+                                             <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
                                             <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                            <a href="#confirmDelete" class="ws-normal delete-row text-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="hidden">Ali Muhammad</td>
-                                        <td class="hidden">Omar Negm</td>
-                                        <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                        <td class="hidden">1000 <small>EGP</small></td>
-                                        <td class="hidden">-23 <Small>EGP</Small></td>
-                                        <td>120654</td>
-                                        <td>
-                                            <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                            <br>
-                                            <span>(+20) 1012537756</span>
-                                        </td>
-                                        <td>
-                                            <span class="date">13/5/2019</span>
-                                            <br>
-                                            <span class="time">5:30 PM</span>
-                                        </td>
-                                        <td><strong>1023 </strong><small>EGP</small></td>
-                                        <td><span class="badge" style="background: #4fa2d0">New</span></td>
+                                        <td>51</td>
+                                        <td class="font-weight-bold">Chicken Nuggets</td>
+                                        <td>chicken</td>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
                                         <td class="actions text-center">
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
+                                             <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
                                             <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                            <a href="#confirmDelete" class="ws-normal delete-row text-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="hidden">Ali Muhammad</td>
-                                        <td class="hidden">Omar Negm</td>
-                                        <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                        <td class="hidden">1000 <small>EGP</small></td>
-                                        <td class="hidden">-23 <Small>EGP</Small></td>
-                                        <td>120654</td>
-                                        <td>
-                                            <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                            <br>
-                                            <span>(+20) 1012537756</span>
-                                        </td>
-                                        <td>
-                                            <span class="date">13/5/2019</span>
-                                            <br>
-                                            <span class="time">5:30 PM</span>
-                                        </td>
-                                        <td><strong>1023 </strong><small>EGP</small></td>
-                                        <td><span class="badge" style="background: #d62114">Delivered with lost</span></td>
+                                        <td>51</td>
+                                        <td class="font-weight-bold">Chicken Nuggets</td>
+                                        <td>chicken</td>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
                                         <td class="actions text-center">
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
+                                             <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
                                             <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="hidden">Ali Muhammad</td>
-                                        <td class="hidden">Omar Negm</td>
-                                        <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                        <td class="hidden">1000 <small>EGP</small></td>
-                                        <td class="hidden">-23 <Small>EGP</Small></td>
-                                        <td>120654</td>
-                                        <td>
-                                            <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                            <br>
-                                            <span>(+20) 1012537756</span>
-                                        </td>
-                                        <td>
-                                            <span class="date">13/5/2019</span>
-                                            <br>
-                                            <span class="time">5:30 PM</span>
-                                        </td>
-                                        <td><strong>1023 </strong><small>EGP</small></td>
-                                        <td><span class="badge" style="background: #d0760b">In-kitchen</span></td>
-                                        <td class="actions text-center">
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="hidden">Ali Muhammad</td>
-                                        <td class="hidden">Omar Negm</td>
-                                        <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                        <td class="hidden">1000 <small>EGP</small></td>
-                                        <td class="hidden">-23 <Small>EGP</Small></td>
-                                        <td>120654</td>
-                                        <td>
-                                            <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                            <br>
-                                            <span>(+20) 1012537756</span>
-                                        </td>
-                                        <td>
-                                            <span class="date">13/5/2019</span>
-                                            <br>
-                                            <span class="time">5:30 PM</span>
-                                        </td>
-                                        <td><strong>1023 </strong><small>EGP</small></td>
-                                        <td><span class="badge" style="background: #000000">Delivered with complaint</span></td>
-                                        <td class="actions text-center">
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                            <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
+                                            <a href="#confirmDelete" class="ws-normal delete-row text-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     </tbody>
                                 </table>
+
+                                <div id="confirmDelete" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+                                    <section class="card">
+                                        <header class="card-header">
+                                            <h2 class="card-title">Confirmation</h2>
+                                        </header>
+                                        <div class="card-body">
+                                            <p>Are you sure?</p>
+                                        </div>
+                                        <footer class="card-footer">
+                                            <div class="row">
+                                                <div class="col-md-12 text-right">
+                                                    <button class="btn btn-danger modal-confirm">Delete</button>
+                                                    <button class="btn btn-default modal-dismiss">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </footer>
+                                    </section>
+                                </div>
+
                             </div>
                         </section>
                     </div>
@@ -1380,11 +1225,6 @@
 <script src="vendor/ios7-switch/ios7-switch.js"></script>
 <script src="vendor/jquery-appear/jquery-appear.js"></script>
 <script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
-<script src="vendor/flot/jquery.flot.js"></script>
-<script src="vendor/flot.tooltip/flot.tooltip.js"></script>
-<script src="vendor/flot/jquery.flot.pie.js"></script>
-<script src="vendor/flot/jquery.flot.categories.js"></script>
-<script src="vendor/flot/jquery.flot.resize.js"></script>
 <script src="vendor/jquery-sparkline/jquery-sparkline.js"></script>
 <script src="vendor/raphael/raphael.js"></script>
 <script src="vendor/morris/morris.js"></script>
@@ -1407,7 +1247,7 @@
 <script src="js/examples/examples.advanced.form.js"></script>
 
 <!-- Order -->
-<script src="js/examples/order-list.js"></script>
+<script src="js/examples/product-list.js"></script>
 
 </body>
 </html>
