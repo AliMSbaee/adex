@@ -5,7 +5,7 @@
     <!-- Basic -->
     <meta charset="UTF-8">
 
-    <title>Order List</title>
+    <title>Add New Product</title>
     <meta name="keywords" content="HTML5 Admin Template" />
     <meta name="description" content="Porto Admin - Responsive HTML5 Template">
     <meta name="author" content="okler.net">
@@ -25,12 +25,10 @@
     <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
 
     <!-- Specific Page Vendor CSS -->
-    <link rel="stylesheet" href="vendor/select2/css/select2.css" />
-    <link rel="stylesheet" href="vendor/select2-bootstrap-theme/select2-bootstrap.min.css" />
-    <link rel="stylesheet" href="vendor/datatables/media/css/dataTables.bootstrap4.css" />
     <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.css" />
     <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.theme.css" />
     <link rel="stylesheet" href="vendor/select2/css/select2.css" />
+    <link rel="stylesheet" href="vendor/select2-bootstrap-theme/select2-bootstrap.min.css" />
     <link rel="stylesheet" href="vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
     <link rel="stylesheet" href="vendor/bootstrap-tagsinput/bootstrap-tagsinput.css" />
     <link rel="stylesheet" href="vendor/bootstrap-colorpicker/css/bootstrap-colorpicker.css" />
@@ -41,8 +39,8 @@
     <link rel="stylesheet" href="vendor/summernote/summernote-bs4.css" />
     <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
     <link rel="stylesheet" href="vendor/codemirror/theme/monokai.css" />
-    <link rel="stylesheet" href="vendor/morris/morris.css" />
-    <link rel="stylesheet" href="vendor/chartist/chartist.min.css" />
+    <link rel="stylesheet" href="vendor/pnotify/pnotify.custom.css" />
+    <link rel="stylesheet" href="vendor/datatables/media/css/dataTables.bootstrap4.css" />
 
 
     <!-- Theme CSS -->
@@ -79,8 +77,8 @@
                 <div class="input-group">
                     <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
                     <span class="input-group-append">
-								<button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
-							</span>
+                        <button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
+                    </span>
                 </div>
             </form>
 
@@ -991,7 +989,7 @@
 
         <section role="main" class="content-body">
             <header class="page-header">
-                <h2>Order</h2>
+                <h2>Create New Product</h2>
 
                 <div class="right-wrapper text-right">
                     <ol class="breadcrumbs">
@@ -1009,417 +1007,178 @@
             </header>
 
             <!-- start: page -->
-            <div class="order-list">
-                <section class="card">
-                    <header class="card-header">
-                        <div class="form-group row">
-                            <div class="col-lg-2 col-sm-12">
-                                <label class="control-label pt-2 mr-2">Filter:</label>
-                                <select class="form-control" data-plugin-multiselect data-plugin-options='{"buttonWidth": "100%"}'>
-                                    <option value="today" selected>Today</option>
-                                    <option value="week">Last week</option>
-                                    <option value="month">Last month</option>
-                                    <option value="custom">Custom</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-3 col-sm-12">
-                                <label class="control-label pt-2 mr-2">Customer:</label>
-                                <select id="customerSearch" class="form-control populate" data-plugin-options='{"buttonWidth": "100%"}'>
-                                    <option></option>
-                                </select>
-                            </div>
-                            <div class="col-lg-7 col-sm-12">
-                                <div class="row">
-                                    <div class="col-sm-12 col-lg-4">
-                                        <label class="control-label pt-2 mr-2">Status:</label>
-                                        <select class="form-control" data-plugin-multiselect data-plugin-options='{"buttonWidth": "100%"}'>
-                                            <option value="Cancelled">Cancelled</option>
-                                            <option value="Delivered">Delivered</option>
-                                            <option value="Lost">Delivered With Lost</option>
-                                            <option value="complaint">Delivered with complaint</option>
-                                            <option value="Pending">Pending</option>
-                                            <option value="kitchen">In-kitchen</option>
-                                            <option value="New">New</option>
-                                        </select>
+            <div class="add-product">
+                <form action="" class="form-horizontal">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <section class="card mb-4">
+                                <header class="card-header">
+                                    <h2 class="card-title">Basic Product Info</h2>
+                                </header>
+                                <div class="card-body">
+
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 control-label text-lg-right pt-2" for="productName">Product Name <span class="required">*</span></label>
+                                        <div class="col-lg-8">
+                                            <input class="form-control" id="productName" data-plugin-maxlength maxlength="30" placeholder="Product name" required/>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-12 col-lg-8">
-                                        <label class="control-label pt-2 mr-2">Duration:</label>
-                                        <div class="input-daterange input-group" data-plugin-datepicker>
-														<span class="input-group-prepend">
-															<span class="input-group-text">
-																From
-															</span>
-														</span>
-                                            <input type="text" class="form-control" name="start">
-                                            <span class="input-group-text border-left-0 border-right-0 rounded-0">
-															to
-														</span>
-                                            <input type="text" class="form-control" name="end">
+
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 control-label text-lg-right pt-2" for="category">Category</label>
+                                        <div class="col-lg-8">
+                                            <select class="form-control populate" id="category">
+                                                <option></option>
+                                                <option value="chicken">Chicken</option>
+                                                <option value="beef">Beef</option>
+                                                <option value="seaFood">Sea Food</option>
+                                                <option value="hotDrinks">Hot Drinks</option>
+                                                <option value="coldDrinks">Cold Drinks</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 control-label text-lg-right pt-2" for="productDescription">Description</label>
+                                        <div class="col-lg-8">
+                                            <textarea class="form-control" id="productDescription" rows="3" data-plugin-maxlength maxlength="70" placeholder="Product description" required></textarea>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </section>
                         </div>
-                    </header>
-                    <div class="card-body">
-                        <table class="table table-bordered table-striped table-sm mb-0 table-responsive-md" id="datatable-details">
-                            <thead>
-                            <tr>
-                                <th class="hidden">Cashier</th>
-                                <th class="hidden">Delivery</th>
-                                <th class="hidden">Notes</th>
-                                <th class="hidden">Paid</th>
-                                <th class="hidden">Short</th>
-                                <th>Order Id</th>
-                                <th>Customer</th>
-                                <th>Date&Time</th>
-                                <th>Total</th>
-                                <th>Status</th>
-                                <th class="text-center">Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                        <div class="col-lg-6">
+                            <section class="card mb-4">
+                                <header class="card-header">
+                                    <h2 class="card-title">Product Units</h2>
+                                </header>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="mb-3">
+                                                <button id="addToTable" class="btn btn-success">Add Unit <i class="fas fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+                                        <thead>
+                                        <tr>
+                                            <th>Unit</th>
+                                            <th>Cost</th>
+                                            <th>Price</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
 
-                            <tr>
-                                <td class="hidden">Omar Negm</td>
-                                <td class="hidden">Ali Muhammad</td>
-                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                <td class="hidden">1000 <small>EGP</small></td>
-                                <td class="hidden">-23 <Small>EGP</Small></td>
-                                <td>120654</td>
-                                <td>
-                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                    <br>
-                                    <span>(+20) 1012537756</span>
-                                </td>
-                                <td>
-                                    <span class="date">13/5/2019</span>
-                                    <br>
-                                    <span class="time">5:30 PM</span>
-                                </td>
-                                <td><strong>1023 </strong><small>EGP</small></td>
-                                <td><span class="badge" style="background: #c92ecb">Pending</span></td>
-                                <td class="actions text-center">
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="hidden">Omar Negm</td>
-                                <td class="hidden">Ali Muhammad</td>
-                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                <td class="hidden">1000 <small>EGP</small></td>
-                                <td class="hidden">-23 <Small>EGP</Small></td>
-                                <td>120654</td>
-                                <td>
-                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                    <br>
-                                    <span>(+20) 1012537756</span>
-                                </td>
-                                <td>
-                                    <span class="date">13/5/2019</span>
-                                    <br>
-                                    <span class="time">5:30 PM</span>
-                                </td>
-                                <td><strong>1023 </strong><small>EGP</small></td>
-                                <td><span class="badge" style="background: #41b44e">Delivered</span></td>
-                                <td class="actions text-center">
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="hidden">Omar Negm</td>
-                                <td class="hidden">Ali Muhammad</td>
-                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                <td class="hidden">1000 <small>EGP</small></td>
-                                <td class="hidden">-23 <Small>EGP</Small></td>
-                                <td>120654</td>
-                                <td>
-                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                    <br>
-                                    <span>(+20) 1012537756</span>
-                                </td>
-                                <td>
-                                    <span class="date">13/5/2019</span>
-                                    <br>
-                                    <span class="time">5:30 PM</span>
-                                </td>
-                                <td><strong>1023 </strong><small>EGP</small></td>
-                                <td><span class="badge" style="background: #918e90">Canceled</span></td>
-                                <td class="actions text-center">
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="hidden">Ali Muhammad</td>
-                                <td class="hidden">Omar Negm</td>
-                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                <td class="hidden">1000 <small>EGP</small></td>
-                                <td class="hidden">-23 <Small>EGP</Small></td>
-                                <td>120654</td>
-                                <td>
-                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                    <br>
-                                    <span>(+20) 1012537756</span>
-                                </td>
-                                <td>
-                                    <span class="date">13/5/2019</span>
-                                    <br>
-                                    <span class="time">5:30 PM</span>
-                                </td>
-                                <td><strong>1023 </strong><small>EGP</small></td>
-                                <td><span class="badge" style="background: #4fa2d0">New</span></td>
-                                <td class="actions text-center">
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="hidden">Ali Muhammad</td>
-                                <td class="hidden">Omar Negm</td>
-                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                <td class="hidden">1000 <small>EGP</small></td>
-                                <td class="hidden">-23 <Small>EGP</Small></td>
-                                <td>120654</td>
-                                <td>
-                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                    <br>
-                                    <span>(+20) 1012537756</span>
-                                </td>
-                                <td>
-                                    <span class="date">13/5/2019</span>
-                                    <br>
-                                    <span class="time">5:30 PM</span>
-                                </td>
-                                <td><strong>1023 </strong><small>EGP</small></td>
-                                <td><span class="badge" style="background: #d62114">Delivered with lost</span></td>
-                                <td class="actions text-center">
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="hidden">Ali Muhammad</td>
-                                <td class="hidden">Omar Negm</td>
-                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                <td class="hidden">1000 <small>EGP</small></td>
-                                <td class="hidden">-23 <Small>EGP</Small></td>
-                                <td>120654</td>
-                                <td>
-                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                    <br>
-                                    <span>(+20) 1012537756</span>
-                                </td>
-                                <td>
-                                    <span class="date">13/5/2019</span>
-                                    <br>
-                                    <span class="time">5:30 PM</span>
-                                </td>
-                                <td><strong>1023 </strong><small>EGP</small></td>
-                                <td><span class="badge" style="background: #d0760b">In-kitchen</span></td>
-                                <td class="actions text-center">
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="hidden">Ali Muhammad</td>
-                                <td class="hidden">Omar Negm</td>
-                                <td class="hidden">Vegetables wasn't fresh and not clean</td>
-                                <td class="hidden">1000 <small>EGP</small></td>
-                                <td class="hidden">-23 <Small>EGP</Small></td>
-                                <td>120654</td>
-                                <td>
-                                    <a class="font-weight-bold m-0 text-primary" href="#">Ali Muhammad</a>
-                                    <br>
-                                    <span>(+20) 1012537756</span>
-                                </td>
-                                <td>
-                                    <span class="date">13/5/2019</span>
-                                    <br>
-                                    <span class="time">5:30 PM</span>
-                                </td>
-                                <td><strong>1023 </strong><small>EGP</small></td>
-                                <td><span class="badge" style="background: #000000">Delivered with complaint</span></td>
-                                <td class="actions text-center">
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit text-dark"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fas fa-ban text-danger"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye text-primary"></i></a>
-                                    <a href="" data-toggle="tooltip" data-placement="top" title="Check as Delivered"><i class="fas fa-check text-success"></i></a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </section>
+                        </div>
                     </div>
-                </section>
-
-                <div class="row">
-
-                    <div class="col-lg-6 mt-3">
-                        <section class="card">
-                            <header class="card-header">
-                                <h2 class="card-title">Income Statistics</h2>
-                            </header>
-                            <div class="card-body">
-                                <div id="incomeChart" class="ct-chart ct-perfect-fourth ct-golden-section"></div>
-                                <span class="badge text-light" style="background: #0088cc">Total Income</span>
-                                <span class="badge text-light" style="background: #005580">Tax</span>
-                                <span class="badge text-light" style="background: #E36159">Net Income</span>
-                            </div>
-                        </section>
-                    </div>
-
-                    <div class="col-lg-6 mt-3">
-                        <section class="card">
-                            <header class="card-header">
-                                <h2 class="card-title">Pie Chart</h2>
-                            </header>
-                            <!--<div class="card-body">-->
-                            <!--<div id="orderChart" class="ct-chart ct-perfect-fourth ct-golden-section"></div>-->
-                            <!--</div>-->
-                            <div class="card-body">
-
-                                <!-- Flot: Pie -->
-                                <div class="chart chart-md" id="flotPie"></div>
-                                <script type="text/javascript">
-
-                                    var flotPieData = [{
-                                        label: "Pending",
-                                        data: [
-                                            [1, 6]
-                                        ],
-                                        color: '#c92ecb'
-                                    }, {
-                                        label: "Delivered",
-                                        data: [
-                                            [1, 15]
-                                        ],
-                                        color: '#41b44e'
-                                    },{
-                                        label: "Delivered with lost",
-                                        data: [
-                                            [1, 12]
-                                        ],
-                                        color: '#d62114'
-                                    }, {
-                                        label: "Canceled",
-                                        data: [
-                                            [1, 5]
-                                        ],
-                                        color: '#918e90'
-                                    }, {
-                                        label: "New",
-                                        data: [
-                                            [1, 7]
-                                        ],
-                                        color: '#4fa2d0'
-                                    }, {
-                                        label: "In-kitchen",
-                                        data: [
-                                            [1, 7]
-                                        ],
-                                        color: '#d0760b'
-                                    }, {
-                                        label: "Delivered with complaint",
-                                        data: [
-                                            [1, 6]
-                                        ],
-                                        color: '#000000'
-                                    }];
-                                </script>
-
-                            </div>
-                        </section>
-                    </div>
-
-                </div>
+                </form>
             </div>
-            <!-- end: page -->
         </section>
     </div>
+    <!-- end: page -->
+</section>
 
-    <aside id="sidebar-right" class="sidebar-right">
-        <div class="nano">
-            <div class="nano-content">
-                <a href="#" class="mobile-close d-md-none">
-                    Collapse <i class="fas fa-chevron-right"></i>
-                </a>
 
-                <div class="sidebar-right-wrapper">
-
-                    <div class="sidebar-widget widget-calendar">
-                        <h6>Upcoming Tasks</h6>
-                        <div data-plugin-datepicker data-plugin-skin="dark"></div>
-
-                        <ul>
-                            <li>
-                                <time datetime="2017-04-19T00:00+00:00">04/19/2017</time>
-                                <span>Company Meeting</span>
-                            </li>
-                        </ul>
+<div id="createCategoryModal" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+    <section class="card">
+        <header class="card-header">
+            <h2 class="card-title">Create New Category</h2>
+        </header>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group row">
+                    <label class="col-lg-3 control-label text-lg-right pt-2" for="categoryName">Category Name</label>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" id="categoryName">
                     </div>
-
-                    <div class="sidebar-widget widget-friends">
-                        <h6>Friends</h6>
-                        <ul>
-                            <li class="status-online">
-                                <figure class="profile-picture">
-                                    <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
-                                </figure>
-                                <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
-                                </div>
-                            </li>
-                            <li class="status-online">
-                                <figure class="profile-picture">
-                                    <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
-                                </figure>
-                                <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
-                                </div>
-                            </li>
-                            <li class="status-offline">
-                                <figure class="profile-picture">
-                                    <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
-                                </figure>
-                                <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
-                                </div>
-                            </li>
-                            <li class="status-offline">
-                                <figure class="profile-picture">
-                                    <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
-                                </figure>
-                                <div class="profile-info">
-                                    <span class="name">Joseph Doe Junior</span>
-                                    <span class="title">Hey, how are you?</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
+                </div>
+            </form>
+        </div>
+        <footer class="card-footer">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button class="btn btn-success modal-confirm">Add</button>
+                    <button class="btn btn-default modal-dismiss">Cancel</button>
                 </div>
             </div>
+        </footer>
+    </section>
+</div>
+
+<aside id="sidebar-right" class="sidebar-right">
+    <div class="nano">
+        <div class="nano-content">
+            <a href="#" class="mobile-close d-md-none">
+                Collapse <i class="fas fa-chevron-right"></i>
+            </a>
+
+            <div class="sidebar-right-wrapper">
+
+                <div class="sidebar-widget widget-calendar">
+                    <h6>Upcoming Tasks</h6>
+                    <div data-plugin-datepicker data-plugin-skin="dark"></div>
+
+                    <ul>
+                        <li>
+                            <time datetime="2017-04-19T00:00+00:00">04/19/2017</time>
+                            <span>Company Meeting</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget widget-friends">
+                    <h6>Friends</h6>
+                    <ul>
+                        <li class="status-online">
+                            <figure class="profile-picture">
+                                <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                            </figure>
+                            <div class="profile-info">
+                                <span class="name">Joseph Doe Junior</span>
+                                <span class="title">Hey, how are you?</span>
+                            </div>
+                        </li>
+                        <li class="status-online">
+                            <figure class="profile-picture">
+                                <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                            </figure>
+                            <div class="profile-info">
+                                <span class="name">Joseph Doe Junior</span>
+                                <span class="title">Hey, how are you?</span>
+                            </div>
+                        </li>
+                        <li class="status-offline">
+                            <figure class="profile-picture">
+                                <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                            </figure>
+                            <div class="profile-info">
+                                <span class="name">Joseph Doe Junior</span>
+                                <span class="title">Hey, how are you?</span>
+                            </div>
+                        </li>
+                        <li class="status-offline">
+                            <figure class="profile-picture">
+                                <img src="img/!sample-user.jpg" alt="Joseph Doe" class="rounded-circle">
+                            </figure>
+                            <div class="profile-info">
+                                <span class="name">Joseph Doe Junior</span>
+                                <span class="title">Hey, how are you?</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
-    </aside>
-</section>
+    </div>
+</aside>
 
 <!-- Vendor -->
 <script src="vendor/jquery/jquery.js"></script>
@@ -1433,20 +1192,14 @@
 <script src="vendor/jquery-placeholder/jquery-placeholder.js"></script>
 
 <!-- Specific Page Vendor -->
-<script src="vendor/select2/js/select2.js"></script>
-<script src="vendor/datatables/media/js/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/media/js/dataTables.bootstrap4.min.js"></script>
-<script src="vendor/datatables/extras/TableTools/Buttons-1.4.2/js/dataTables.buttons.min.js"></script>
-<script src="vendor/datatables/extras/TableTools/Buttons-1.4.2/js/buttons.bootstrap4.min.js"></script>
-<script src="vendor/datatables/extras/TableTools/Buttons-1.4.2/js/buttons.html5.min.js"></script>
-<script src="vendor/datatables/extras/TableTools/JSZip-2.5.0/jszip.min.js"></script>
-<script src="vendor/datatables/extras/TableTools/pdfmake-0.1.32/pdfmake.min.js"></script>
-<script src="vendor/datatables/extras/TableTools/pdfmake-0.1.32/vfs_fonts.js"></script>
 <script src="vendor/jquery-ui/jquery-ui.js"></script>
 <script src="vendor/jqueryui-touch-punch/jqueryui-touch-punch.js"></script>
+<script src="vendor/select2/js/select2.js"></script>
+<script src="vendor/pnotify/pnotify.custom.js"></script>
 <script src="vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
 <script src="vendor/jquery-maskedinput/jquery.maskedinput.js"></script>
 <script src="vendor/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+<script src="vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
 <script src="vendor/bootstrap-timepicker/bootstrap-timepicker.js"></script>
 <script src="vendor/fuelux/js/spinner.js"></script>
 <script src="vendor/dropzone/dropzone.js"></script>
@@ -1463,20 +1216,10 @@
 <script src="vendor/summernote/summernote-bs4.js"></script>
 <script src="vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
 <script src="vendor/ios7-switch/ios7-switch.js"></script>
-<script src="vendor/jquery-appear/jquery-appear.js"></script>
-<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
-<script src="vendor/flot/jquery.flot.js"></script>
-<script src="vendor/flot.tooltip/flot.tooltip.js"></script>
-<script src="vendor/flot/jquery.flot.pie.js"></script>
-<script src="vendor/flot/jquery.flot.categories.js"></script>
-<script src="vendor/flot/jquery.flot.resize.js"></script>
-<script src="vendor/jquery-sparkline/jquery-sparkline.js"></script>
-<script src="vendor/raphael/raphael.js"></script>
-<script src="vendor/morris/morris.js"></script>
-<script src="vendor/gauge/gauge.js"></script>
-<script src="vendor/snap.svg/snap.svg.js"></script>
-<script src="vendor/liquid-meter/liquid.meter.js"></script>
-<script src="vendor/chartist/chartist.js"></script>
+<script src="vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/media/js/dataTables.bootstrap4.min.js"></script>
+
+
 <!-- Theme Base, Components and Settings -->
 <script src="js/theme.js"></script>
 
@@ -1487,12 +1230,10 @@
 <script src="js/theme.init.js"></script>
 
 <!-- Examples -->
-<script src="js/examples/examples.datatables.default.js"></script>
-<script src="js/examples/examples.datatables.row.with.details.js"></script>
 <script src="js/examples/examples.advanced.form.js"></script>
+<script src="js/examples/examples.modals.js"></script>
 
-<!-- Order -->
-<script src="js/examples/order-list.js"></script>
+<script src="js/examples/add-product.js"></script>
 
 </body>
 </html>

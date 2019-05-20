@@ -1059,6 +1059,10 @@
 													<p class="col-3 text-right font-weight-bold m-0">Address:</p>
 													<p class="col-9 m-0" id="customerInfoAddress"></p>
 												</div>
+												<div class="row">
+													<p class="col-3 text-right font-weight-bold m-0">Discount:</p>
+													<p class="col-9 m-0" id="customerInfoDiscount"></p>
+												</div>
 											</div>
 
 										</section>
@@ -1189,26 +1193,12 @@
 												</div>
 											</div>
 
-											<div class="row discount">
-												<div class="col-sm-6">
-													<div class="checkbox-custom checkbox-primary mt-1">
-														<input type="checkbox" checked="" id="ApplyDiscountCheckbox">
-														<label class="font-weight-bold" for="ApplyDiscountCheckbox">Discount?</label>
-													</div>
-												</div>
-												<div class="col-sm-6" id="discountsDropdown">
-													<select class="form-control" data-plugin-multiselect data-plugin-options='{"buttonWidth": "100%"}'>
-														<option value="20" selected>20%</option>
-														<option value="50">Opening discount</option>
-													</select>
-												</div>
-											</div>
-
 										</section>
 
 										<section class="card receipt-total-price mt-0">
 											<div class="card-body">
 												<h4 class="font-weight-bold m-0">Net: <small class="float-right">955 EGP</small></h4>
+												<h4 class="font-weight-bold m-0">Discount: <small class="float-right">20 %</small></h4>
 												<h4 class="font-weight-bold m-0">Tax: <small class="float-right">80 EGP</small></h4>
 												<h3 class="font-weight-bold m-0">Total: <span class="float-right text-color-secondary">1025 EGP</span></h3>
 											</div>
@@ -1345,6 +1335,8 @@
 						</ul>
 
 						<div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
+
+
 							<div class="isotope-item chicken col-sm-4 col-md-3 col-lg-2">
 								<a class="modal-basic" href="#chicken1">
 									<div class="thumbnail product" style="background-color: #0088cc;">
@@ -1353,6 +1345,8 @@
 										</div>
 									</div>
 								</a>
+
+
 								<div id="chicken1" class="modal-block mfp-hide">
 									<section class="card">
 										<header class="card-header">
@@ -2023,14 +2017,6 @@
 								</div>
 							</div>
 
-
-
-
-
-
-
-
-
 						</div>
 					</div>
 				</div>
@@ -2052,7 +2038,7 @@
 						<h6>Ready Orders</h6>
 					</div>
 
-					<div class="toggle toggle-primary" data-plugin-toggle data-plugin-options="{ 'isAccordion': true }">
+					<div class="toggle toggle-primary" data-plugin-toggle>
 						<section class="toggle">
 							<label>651651 <br> <small class="ml-3">Ali Muhammad</small></label>
 							<div class="toggle-content">

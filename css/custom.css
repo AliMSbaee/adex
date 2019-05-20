@@ -2,117 +2,117 @@
 
 /* Order */
 @media only screen and (min-width: 1366px) {
-    .order-page #content-menu {
-        left: auto;
-        right: 0;
-        width: 450px;
-    }
+  .order-page #content-menu {
+    left: auto;
+    right: 0;
+    width: 450px;
+  }
 
-    html.fixed .order-page .inner-body {
-        margin-right: 450px;
-        border-top-width: 113px;
-    }
+  html.fixed .order-page .inner-body {
+    margin-right: 450px;
+    border-top-width: 113px;
+  }
 
-    html.sidebar-right-opened .order-page #content-menu,
-    html.sidebar-right-opened .order-page #content-menu .receipt-total-price {
-        right: 300px;
-    }
+  html.sidebar-right-opened .order-page #content-menu,
+  html.sidebar-right-opened .order-page #content-menu .receipt-total-price {
+    right: 300px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .order-page #content-menu {
-        left: auto;
-        right: 0;
-        width: 450px;
-    }
+  .order-page #content-menu {
+    left: auto;
+    right: 0;
+    width: 450px;
+  }
 
-    html.fixed .order-page .inner-body {
-        margin-left: 0;
-    }
+  html.fixed .order-page .inner-body {
+    margin-left: 0;
+  }
 
-    html.fixed .order-page .inner-menu .nano-content {
-        padding: 0;
-    }
+  html.fixed .order-page .inner-menu .nano-content {
+    padding: 0;
+  }
 }
 
 .order-page .categories {
-    margin-right: -5px;
-    margin-left: -5px;
+  margin-right: -5px;
+  margin-left: -5px;
 }
 
 .order-page .categories .nav-item {
-    padding-right: 5px;
-    padding-left: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .order-page .categories .nav-link {
-    font-size: 16px;
-    color: #fff;
-    font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
 }
 
 .order-page .nav-pills-primary > li > a {
-    background-color: #6c757d;
+  background-color: #6c757d;
 }
 
 .nav-pills-primary > li.active > a {
-    background-color: #0088cc;
+  background-color: #0088cc;
 }
 
 .order-page .mg-files {
-    margin-left: -5px;
-    margin-right: -5px;
+  margin-left: -5px;
+  margin-right: -5px;
 }
 
 .order-page .isotope-item {
-    padding: 0 5px;
+  padding: 0 5px;
 }
 
 .order-page .isotope-item .modal-basic {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 .order-page .isotope-item .thumbnail {
-    padding: 0;
-    overflow: hidden;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border: none;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
 }
 
 .order-page .isotope-item .thumbnail:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .order-page .mg-files .thumbnail:hover .thumb-preview img {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 .order-page .isotope-item .thumbnail:hover .thumb-preview .mg-thumb-options {
-    background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .order-page .isotope-item .thumbnail:hover .mg-description {
-    background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .order-page .isotope-item .thumbnail .mg-description {
-    text-align: center;
-    background-color: #fff;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  text-align: center;
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .order-page .mg-files .thumbnail .mg-title {
-    display: block;
-    margin: 3px 0 -1px 0;
-    padding: 20px 10px 20px 10px;
-    border-radius: 5px;
+  display: block;
+  margin: 3px 0 -1px 0;
+  padding: 20px 10px 20px 10px;
+  border-radius: 5px;
 }
 
 .order-page #content-menu .receipt .card-body {
-    padding: 0;
+  padding: 0;
 }
 
 .order-page #content-menu .inner-menu-content,
@@ -121,186 +121,233 @@
 .order-page #content-menu .inner-menu-content .tabs .tab-content #order,
 .order-page #content-menu .inner-menu-content .tabs .tab-content #customer,
 .order-page #content-menu .receipt {
-    height: 100%;
+  height: 100%;
 }
 
 .order-page #content-menu .receipt .card-body {
-    max-height: calc(100% - 350px);
-    border-radius: 0;
+  max-height: calc(100% - 350px);
+  border-radius: 0;
 }
 .order-page #content-menu .receipt .nano-content:after,
 .order-page #content-menu .search-results-list .nano-content:after {
-    height: 0;
+  height: 0;
 }
 
-
 .order-page #content-menu .receipt-total-price {
-    position: fixed;
-    bottom: 0;
-    right: 1px;
-    width: 450px;
+  position: fixed;
+  bottom: 0;
+  right: 1px;
+  width: 450px;
 }
 
 /*.order-page #customer-info .card-body {*/
-    /*padding-top: 10px;*/
-    /*padding-bottom: 10px;*/
+/*padding-top: 10px;*/
+/*padding-bottom: 10px;*/
 /*}*/
 
 .order-page #customerInfo .card-header {
-    padding: 0;
+  padding: 0;
 }
 
 .order-page #order .table th,
-.order-page #order .table td  {
-    padding: 0.5rem;
+.order-page #order .table td {
+  padding: 0.5rem;
 }
 
 .order-page .td-qty {
-    font-size: 15px;
-    font-weight: bold;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .order-page .td-qty .fa {
-    cursor: pointer;
-    padding: 2px;
-    margin: 0 2px;
+  cursor: pointer;
+  padding: 2px;
+  margin: 0 2px;
 }
 
 .order-page #content-menu .search-results-list li {
-    margin-right: 10px;
-    padding-bottom: 0;
-    margin-bottom: 0;
+  margin-right: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .order-page #content-menu .search-results-list {
-    max-height: calc(100% - 100px);
+  max-height: calc(100% - 100px);
 }
 
 .order-page #content-menu .search-results-list .customer-search-result {
-    padding: 10px;
+  padding: 10px;
 }
 
 .order-page .inner-menu .title {
-    text-transform: none;
+  text-transform: none;
 }
 
 .order-page #content-menu .inner-menu-toggle-inside {
-    margin: 0;
+  margin: 0;
 }
 
 .order-deliver .toggle > label {
-    background: #f0f0f0;
-    font-weight: bold;
+  background: #f0f0f0;
+  font-weight: bold;
 }
 
 .order-deliver .toggle .toggle {
-    background-color: #fff;
-    border-radius: 5px;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .order-deliver .toggle-content {
-    padding: 15px;
+  padding: 15px;
 }
 
 .order-deliver .toggle-content ul {
-    padding: 0;
+  padding: 0;
 }
 
 .order-deliver .toggle-content ul li {
-    list-style: none;
+  list-style: none;
 }
 
 .select2-container--bootstrap .select2-results__option {
-    border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4;
 }
 
-.select2-container--bootstrap .select2-results__option .select2-results__option {
-    border: 0;
+.select2-container--bootstrap
+  .select2-results__option
+  .select2-results__option {
+  border: 0;
 }
 
 .select2-container--bootstrap .select2-results__option p {
-    font-weight: bold;
-    line-height: 1.4;
+  font-weight: bold;
+  line-height: 1.4;
 }
 
-.select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
-    background-color: #0088cc;
+.select2-container--bootstrap
+  .select2-results__option--highlighted[aria-selected] {
+  background-color: #0088cc;
 }
 
-.select2-container--bootstrap .select2-results__option--highlighted[aria-selected] p {
-    color: #fff !important;
+.select2-container--bootstrap
+  .select2-results__option--highlighted[aria-selected]
+  p {
+  color: #fff !important;
 }
 
-.select2-container--bootstrap .select2-results>.select2-results__options {
-    max-height: 350px;
+.select2-container--bootstrap .select2-results > .select2-results__options {
+  max-height: 350px;
 }
-
 
 /* Order-list */
-.order-list .multiselect-container > li > a > label input[type='radio'] {
-    display: none;
+.order-list .multiselect-container > li > a > label input[type="radio"] {
+  display: none;
 }
 
 .order-list #datatable-details td {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 .order-list #datatable-details td .badge {
-    color: #fff;
+  color: #fff;
 }
 
 .order-page .discount {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .order-details .order-info p {
-    margin: 0;
+  margin: 0;
 }
 
 .order-details .timeline .tm-items > li .tm-datetime {
-    top: 54%;
+  top: 54%;
 }
 
 .order-details .timeline .tm-items > li .tm-box {
-    background: #ecedf0;
+  background: #ecedf0;
 }
 
 .order-details .timeline .tm-items > li .tm-box::after {
-    border-right-color: #ecedf0;
+  border-right-color: #ecedf0;
 }
 
 .order-details .timeline .tm-items > li .tm-icon {
-    height: 35px;
-    width: 35px;
-    padding: 4px;
-    font-size: 20px;
-    line-height: 20px;
-    left: 150px;
-    top: 65%;
+  height: 35px;
+  width: 35px;
+  padding: 4px;
+  font-size: 20px;
+  line-height: 20px;
+  left: 150px;
+  top: 65%;
 }
 
 .order-details .timeline .tm-items > li .tm-datetime .tm-datetime-time {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .order-details .text-decoration-line-through {
-    position: relative;
+  position: relative;
 }
 
 .order-details .text-decoration-line-through::after {
-    content: "";
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    border-top: 1px solid #0088cc;
-    margin-top: 24px;
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  border-top: 1px solid #0088cc;
+  margin-top: 24px;
 }
 
 .multiselect.btn {
-    text-align: left;
+  text-align: left;
 }
 
 .multiselect.btn.dropdown-toggle::after {
-    float: right;
-    margin-top: 9px;
+  float: right;
+  margin-top: 9px;
+}
+
+/*- Kitchen page ------------------------------------------------------*/
+.kitchen .order-card > a {
+  text-decoration: none;
+}
+
+.kitchen .order-card > a > .card {
+  opacity: 0.6;
+  box-shadow: 0 1px 5px 1px #bbb;
+}
+
+.kitchen .order-card > a:active > .card {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.kitchen .order-card.active > a .card {
+  opacity: 1;
+}
+
+.kitchen .order-card span.badge {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  opacity: 1;
+  color: #fff;
+}
+
+.kitchen .kitchen-inner-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.kitchen .kitchen-inner-menu .receipt {
+  height: 100%;
+}
+
+.kitchen .kitchen-inner-menu .receipt .card-body {
+  max-height: calc(100% - 300px);
+  border-radius: 0;
 }

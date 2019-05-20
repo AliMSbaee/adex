@@ -143,13 +143,15 @@
         html: '<p class="customer-name text-primary h5 font-weight-bold m-0">Ali Muhammad</p><p class="customer-phone m-0"><i class="fas fa-phone-square mr-1"></i>01012537756</p><p class="customer-address m-0"><i class="fas fa-map-marker-alt mr-1"></i>Adab st Mansoura, Egypt</p>',
         title: 'Ali Muhammad',
         phone: '01012537756',
-        address: 'Adab st Mansoura, Egypt'
+        address: 'Adab st Mansoura, Egypt',
+        discount: 20
     }, {
         id: 1,
         text: '<p class="customer-name text-primary font-weight-bold m-0">Ali Muhammad</p>',
         html: '<p class="customer-name text-primary h5 font-weight-bold m-0">Ali Muhammad</p><p class="customer-phone m-0"><i class="fas fa-phone-square mr-1"></i>01012537756</p>',
         title: 'Ali Muhammad',
         phone: '01012537756',
+        discount: 20,
         children: [{
             id: 2,
             text: '<p class="customer-name text-primary font-weight-bold m-0">Ali Muhammad</p>',
@@ -171,13 +173,15 @@
         html: '<p class="customer-name text-primary h5 font-weight-bold m-0">Ali Muhammad</p><p class="customer-phone m-0"><i class="fas fa-phone-square mr-1"></i>01012537756</p><p class="customer-address m-0"><i class="fas fa-map-marker-alt mr-1"></i>Adab st Mansoura, Egypt</p>',
         title: 'Ali Muhammad',
         phone: '01012537756',
-        address: 'Adab st Mansoura, Egypt'
+        address: 'Adab st Mansoura, Egypt',
+        discount: 20
     }, {
         id: 5,
         text: '<p class="customer-name text-primary font-weight-bold m-0">Ali Muhammad</p>',
         html: '<p class="customer-name text-primary h5 font-weight-bold m-0">Ali Muhammad</p><p class="customer-phone m-0"><i class="fas fa-phone-square mr-1"></i>01012537756</p>',
         title: 'Ali Muhammad',
         phone: '01012537756',
+        discount: 20,
         children: [{
             id: 6,
             text: '<p class="customer-name text-primary font-weight-bold m-0">Ali Muhammad</p>',
@@ -199,7 +203,8 @@
         html: '<p class="customer-name text-primary h5 font-weight-bold m-0">Ali Muhammad</p><p class="customer-phone m-0"><i class="fas fa-phone-square mr-1"></i>01012537756</p><p class="customer-address m-0"><i class="fas fa-map-marker-alt mr-1"></i>Adab st Mansoura, Egypt</p>',
         title: 'Ali Muhammad',
         phone: '01012537756',
-        address: 'Adab st Mansoura, Egypt'
+        address: 'Adab st Mansoura, Egypt',
+        discount: 20
     }];
 
     $("#customerSearch").select2({
@@ -224,6 +229,7 @@
     }).on('select2:select', function (e) {
         $('#customerInfoPhone').text(e.params.data.phone);
         $('#customerInfoAddress').text(e.params.data.address);
+        $('#customerInfoDiscount').text(e.params.data.discount + ' %');
     });
 
 
@@ -235,6 +241,7 @@
             dropdown.fadeOut(100);
         }
     });
+
 
 }).apply(this, [jQuery]);
 

@@ -12,6 +12,7 @@ Theme Version: 	2.1.1
 	*/
 	function multiselect_selected($el) {
 		var ret = true;
+		var ret = true;
 		$('option', $el).each(function(element) {
 			if (!!!$(this).prop('selected')) {
 				ret = false;
