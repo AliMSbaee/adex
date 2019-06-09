@@ -314,7 +314,6 @@
 }
 
 .kitchen .order-card > a > .card {
-  opacity: 0.6;
   box-shadow: 0 1px 5px 1px #bbb;
 }
 
@@ -323,8 +322,39 @@
   transform: translateY(2px);
 }
 
-.kitchen .order-card.active > a .card {
-  opacity: 1;
+.kitchen .order-primary > a .card-body {
+  border-color: #0088cc;
+}
+
+.kitchen .order-primary > a .card-header {
+  background-color: #0088cc;
+  color: #fff;
+  border-bottom: 0;
+}
+
+.kitchen .order-danger > a .card-body {
+  border-color: #dc3545;
+}
+
+.kitchen .order-danger > a .card-header {
+  background-color: #dc3545;
+  color: #fff;
+  border-bottom: 0;
+}
+
+.kitchen .order-cancelled > a .card-body {
+  border-color: #343a40;
+}
+
+.kitchen .order-cancelled > a .card-header {
+  background-color: #343a40;
+  color: #fff;
+  border-bottom: 0;
+}
+
+.kitchen .order-card.active > a .card .card-body {
+  border-width: 0 2px 2px 2px;
+  border-style: solid;
 }
 
 .kitchen .order-card span.badge {

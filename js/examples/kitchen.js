@@ -17,7 +17,7 @@
       .addClass("active")
       .siblings()
       .removeClass("active");
-    $this.find("span.badge").remove();
+    $this.find("span.badge").fadeOut();
     return updateOrderTable(orderId);
   };
 
@@ -55,19 +55,19 @@
     var timeOfOrder = new Date(dateTime).getTime(),
       spentTime = (Date.now() - timeOfOrder) / 60000;
     var orderCard = $(
-      '<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 px-2 order-card">' +
+      '<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 px-2 ' +
+        (status === "cancelled"
+          ? "order-cancelled"
+          : spentTime > expectedTime
+          ? "order-danger"
+          : "order-primary") +
+        ' order-card">' +
         '<a href="#" role="button" id=' +
         id +
         ' onclick="chooseOrder(this)">' +
         '<section class="card text-center mt-4 text-color-quaternary">' +
-        '<header class="card-header ' +
-        (status === "cancelled"
-          ? "bg-default"
-          : spentTime > expectedTime
-          ? "bg-danger"
-          : "bg-primary") +
-        ' p-0">' +
-        (newStatus ? '<span class="badge bg-danger m-0">New</span>' : "") +
+        '<header class="card-header p-0">' +
+        (newStatus ? '<span class="badge bg-success m-0">New</span>' : "") +
         '<h2 class="m-2">654315</h2>' +
         "</header>" +
         '<div class="card-body p-2">' +
@@ -106,7 +106,6 @@
           (Date.now() - new Date(orders[key].dateTime).getTime()) / 1000
       });
     });
-    console.log(newOrders);
   };
 
   $(document).ready(function() {
@@ -114,10 +113,10 @@
     //---------------- Success:
     var newOrders = {
       1846464: {
-        dateTime: "21 May 2019  01:14:00",
+        dateTime: "21 May 2019  05:14:00",
         clientName: "Omar Negm",
         area: "Maadi-Cairo",
-        expectedTime: 50,
+        expectedTime: 5000,
         status: "running",
         items: {
           1: {
@@ -162,7 +161,7 @@
         }
       },
       1846466: {
-        dateTime: "19 May 2019  05:13:00",
+        dateTime: "21 May 2019 05:13:00",
         clientName: "Ali Sbaee",
         area: "Mansoura-Egypt",
         expectedTime: 20,
@@ -187,5 +186,12 @@
       }
     };
     updateOrdersCards(newOrders);
+
+    $("#print").click(function() {
+      $("#printWrapper").printThis({
+        importCSS: true,
+        importStyle: true
+      });
+    });
   });
 }.apply(this, [jQuery]));
