@@ -109,14 +109,16 @@
   };
 
   $(document).ready(function() {
-    //---------------- Ajax call here
+    //---------------- Ajax call here each 60 sec
     //---------------- Success:
+    //------------ After success you have to update orders using updateOrdersCards() function
+
     var newOrders = {
       1846464: {
-        dateTime: "21 May 2019  05:14:00",
+        dateTime: "12 june 2019  15:14:00",
         clientName: "Omar Negm",
         area: "Maadi-Cairo",
-        expectedTime: 5000,
+        expectedTime: 100,
         status: "running",
         items: {
           1: {
@@ -181,6 +183,66 @@
             name: "Shawerma",
             qty: 6,
             size: "medium"
+          },
+          4: {
+            name: "Chicken Burger",
+            qty: 7,
+            size: "large"
+          },
+          5: {
+            name: "Nodels",
+            qty: 3,
+            size: "small"
+          },
+          6: {
+            name: "Shawerma",
+            qty: 6,
+            size: "medium"
+          },
+          7: {
+            name: "Chicken Burger",
+            qty: 7,
+            size: "large"
+          },
+          8: {
+            name: "Nodels",
+            qty: 3,
+            size: "small"
+          },
+          9: {
+            name: "Shawerma",
+            qty: 6,
+            size: "medium"
+          },
+          10: {
+            name: "Chicken Burger",
+            qty: 7,
+            size: "large"
+          },
+          11: {
+            name: "Nodels",
+            qty: 3,
+            size: "small"
+          },
+          12: {
+            name: "Shawerma",
+            qty: 6,
+            size: "medium"
+          },
+          13: {
+            name: "Chicken Burger",
+            qty: 7,
+            size: "large"
+          },
+          14: {
+            name: "Nodels",
+            qty: 3,
+            size: "small"
+          },
+          15: {
+            name: "Shawerma",
+            qty: 6,
+            size: "medium"
           }
         }
       }
@@ -188,9 +250,12 @@
     updateOrdersCards(newOrders);
 
     $("#print").click(function() {
-      $("#printWrapper").printThis({
+      $("#kitchenInnerMenu").printThis({
         importCSS: true,
-        importStyle: true
+        importStyle: true, //thrown in for extra measure
+        loadCSS: "file:///D:/Work/Freelance/Omar%20Negm/adex/css/print.css",
+        header:
+          "<div class='logo-print'><img src='file:///D:/Work/Freelance/Omar%20Negm/adex/img/logo-default.png'></div>"
       });
     });
   });

@@ -1,0 +1,69 @@
+body,
+html {
+  margin: 0;
+}
+
+body {
+  padding: 15px;
+}
+
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.print-hidden {
+  display: none;
+}
+
+.logo-print {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.logo-print img {
+  width: 200px;
+}
+
+.print-bold {
+  font-weight: bold;
+}
+
+.print-light {
+  font-weight: 300;
+}
+
+td h5 {
+  line-height: 1;
+  margin: 0;
+}
+
+.card.receipt {
+  margin: 20px 0;
+}
+
+table {
+  width: 100%;
+}
+
+.card.receipt table {
+  text-align: center;
+}
+
+.card.receipt table thead th {
+  padding: 5px;
+  background: #eee;
+}
+
+.card.receipt table td {
+  padding: 3px;
+}
+
+.print-right {
+  text-align: right;
+}
+
+.h2 {
+  font-size: x-large;
+}
