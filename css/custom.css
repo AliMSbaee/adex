@@ -381,3 +381,7 @@
   max-height: calc(100% - 350px);
   border-radius: 0;
 }
+
+.pieLabel div {
+  font-size: small !important;
+}
