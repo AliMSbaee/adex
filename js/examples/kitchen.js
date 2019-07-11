@@ -248,7 +248,7 @@
       }
     };
     updateOrdersCards(newOrders);
-
+    console.log(window.location.hostname);
     $("#print").click(function() {
       $("#kitchenInnerMenu").printThis({
         importCSS: true,
