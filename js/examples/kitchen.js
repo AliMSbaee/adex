@@ -253,7 +253,7 @@
       $("#kitchenInnerMenu").printThis({
         importCSS: true,
         importStyle: true, //thrown in for extra measure
-        loadCSS: window.location.origin + "/css/print.css",
+        loadCSS: window.location.origin + "/adex/css/print.css",
         header:
           "<div class='logo-print'><img src='file:///D:/Work/Freelance/Omar%20Negm/adex/img/logo-default.png'></div>"
       });
