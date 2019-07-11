@@ -248,12 +248,12 @@
       }
     };
     updateOrdersCards(newOrders);
-    console.log(window.location.hostname);
+    console.log(window.location.origin + "/css/print.css");
     $("#print").click(function() {
       $("#kitchenInnerMenu").printThis({
         importCSS: true,
         importStyle: true, //thrown in for extra measure
-        loadCSS: "file:///D:/Work/Freelance/Omar%20Negm/adex/css/print.css",
+        loadCSS: window.location.origin + "/css/print.css",
         header:
           "<div class='logo-print'><img src='file:///D:/Work/Freelance/Omar%20Negm/adex/img/logo-default.png'></div>"
       });
